@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4623182856012672}
   - component: {fileID: 114697956754444300}
+  - component: {fileID: 114737086896379166}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -53,3 +54,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTimeOfDay: 8
   _endTimeOfDay: 17
+--- !u!114 &114737086896379166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527820141167320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158d6e2db4a75460bbbf743a3d21f2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

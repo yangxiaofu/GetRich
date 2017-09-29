@@ -300,6 +300,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1527820141167320, guid: 2c8f8de0f907244b58629685fc217998, type: 2}
+      propertyPath: m_Name
+      value: TimeManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c8f8de0f907244b58629685fc217998, type: 2}
   m_IsPrefabParent: 0

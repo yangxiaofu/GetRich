@@ -59,6 +59,18 @@ namespace Game.Core.Tests{
 
 			Assert.IsFalse(clockFake.endOfDayTriggered);
 		}
+
+		[TestAttribute]
+		public void T05AdvanceClock_DayAdvancesADay()
+		{
+			
+			int anyNumberGreaterThanNine = 10;
+			
+			_clock.GetComponent<DayManager>().ResetDayManager();
+			_clock.AdvanceClock(anyNumberGreaterThanNine);
+			var sut = _clock.GetComponent<DayManager>();
+			Assert.AreEqual(1, sut.currentDay);
+		}
 	}	
 
 }

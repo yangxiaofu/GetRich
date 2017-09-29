@@ -5,6 +5,7 @@ using NUnit.Framework;
 using System;
 
 namespace Game.Core{
+	[RequireComponent(typeof(DayManager))]
 	public class Clock : MonoBehaviour {
 		[SerializeField] int _startTimeOfDay = 8;
 		public int startTimeOfDay{
@@ -20,10 +21,10 @@ namespace Game.Core{
 		public event EndOfDay OnEndOfDay;
 
 		void Start()
-		{
-			_currentTimeOfDay = _startTimeOfDay;
-		}
-		
+        {
+            _currentTimeOfDay = _startTimeOfDay;
+        }
+
         public void AdvanceClock(int hours)
 		{
 			_currentTimeOfDay += hours;
@@ -32,6 +33,7 @@ namespace Game.Core{
 		
 			if (OnEndOfDay != null) OnEndOfDay();
 
+			GetComponent<DayManager>().AdvanceDay();
 			ResetClock();
 		}
 
