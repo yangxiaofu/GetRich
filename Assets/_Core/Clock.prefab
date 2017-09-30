@@ -65,3 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158d6e2db4a75460bbbf743a3d21f2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tasksForTheDay:
+  - {fileID: 11400000, guid: ea07d0a2b6ff44fa18b600f3b26cfd0b, type: 2}
+  - {fileID: 11400000, guid: 4d3339538dd414de8be1a82c5dd83c7a, type: 2}
+  - {fileID: 11400000, guid: 88b3b175f3db14096b70e5d8d999ca31, type: 2}
+  _currentDay: 0

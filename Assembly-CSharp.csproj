@@ -54,8 +54,18 @@
      <Compile Include="Assets\_Core\Clock.cs" />
      <Compile Include="Assets\_Core\ClockFake.cs" />
      <Compile Include="Assets\_Core\DayManager.cs" />
+     <Compile Include="Assets\_Core\Draggable.cs" />
+     <Compile Include="Assets\_Tasks\Task.cs" />
+     <Compile Include="Assets\_Tasks\TaskManager.cs" />
      <Compile Include="Assets\_UI\ClockUI.cs" />
+     <Compile Include="Assets\_UI\DayList.cs" />
      <Compile Include="Assets\_UI\DayUI.cs" />
+     <Compile Include="Assets\_UI\ITask.cs" />
+     <Compile Include="Assets\_UI\List.cs" />
+     <Compile Include="Assets\_UI\PerformTaskButton.cs" />
+     <Compile Include="Assets\_UI\TaskList.cs" />
+     <Compile Include="Assets\_UI\TaskStub.cs" />
+     <Compile Include="Assets\_UI\TaskUI.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
