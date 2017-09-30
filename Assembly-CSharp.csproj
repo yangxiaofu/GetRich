@@ -57,10 +57,12 @@
      <Compile Include="Assets\_Core\ClockFake.cs" />
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
+     <Compile Include="Assets\_Items\ItemConfig.cs" />
      <Compile Include="Assets\_Tasks\_FakeTake2\DecreaseButton.cs" />
      <Compile Include="Assets\_Tasks\_FakeTake2\IncreaseButton.cs" />
      <Compile Include="Assets\_Tasks\Task.cs" />
      <Compile Include="Assets\_Tasks\TaskManager.cs" />
+     <Compile Include="Assets\_UI\AddItemButton.cs" />
      <Compile Include="Assets\_UI\ClockUI.cs" />
      <Compile Include="Assets\_UI\DayList.cs" />
      <Compile Include="Assets\_UI\DayUI.cs" />
@@ -72,6 +74,10 @@
      <Compile Include="Assets\_UI\TaskList.cs" />
      <Compile Include="Assets\_UI\TaskStub.cs" />
      <Compile Include="Assets\_UI\TaskUI.cs" />
+     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
+     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
+     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
+     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

@@ -2,25 +2,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 
 namespace Game.Core{
-    public class Draggable : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
-    {
-		GameObject _draggedItem;
-        public void OnBeginDrag(PointerEventData eventData)
-        {	
-			//Instantae an object and set it to the game object. 
+    public class Draggable : MonoBehaviour
+    {  
+        CameraRaycaster _cameraRaycaster;
+
+        void Start()
+        {
+            _cameraRaycaster = FindObjectOfType<CameraRaycaster>();
+            Assert.IsNotNull(_cameraRaycaster);
         }
 
-        public void OnDrag(PointerEventData eventData)
+        void Update()
         {
-			this.transform.position = eventData.position;
+            UpdateItemPosition();
+            ScanForDropInput();
+            ScanForItemRotatation();
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        private void ScanForItemRotatation()
         {
-			
+            if (Input.GetMouseButtonDown(1))
+            {
+                transform.Rotate(0, 90, 0);
+            }
+        }
+
+        private void UpdateItemPosition()
+        {
+            this.transform.position = _cameraRaycaster.GetMousePositionOnGround();
+        }
+
+        private void ScanForDropInput()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Destroy(this);
+            }
         }
     }
 }
