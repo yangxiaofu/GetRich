@@ -55,13 +55,17 @@
      <Compile Include="Assets\_Core\ClockFake.cs" />
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
+     <Compile Include="Assets\_Tasks\_FakeTake2\DecreaseButton.cs" />
+     <Compile Include="Assets\_Tasks\_FakeTake2\IncreaseButton.cs" />
      <Compile Include="Assets\_Tasks\Task.cs" />
      <Compile Include="Assets\_Tasks\TaskManager.cs" />
      <Compile Include="Assets\_UI\ClockUI.cs" />
      <Compile Include="Assets\_UI\DayList.cs" />
      <Compile Include="Assets\_UI\DayUI.cs" />
+     <Compile Include="Assets\_UI\HoursToConsume.cs" />
      <Compile Include="Assets\_UI\ITask.cs" />
      <Compile Include="Assets\_UI\List.cs" />
+     <Compile Include="Assets\_UI\MainPanel.cs" />
      <Compile Include="Assets\_UI\PerformTaskButton.cs" />
      <Compile Include="Assets\_UI\TaskList.cs" />
      <Compile Include="Assets\_UI\TaskStub.cs" />
