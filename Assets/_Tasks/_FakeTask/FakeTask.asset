@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: FakeTask
   m_EditorClassIdentifier: 
   _hourConsumption: 1
-  _ui: {fileID: 1600138909730014, guid: eed5cc68655cf4ce18121b07fdd63c4a, type: 2}
+  _ui: {fileID: 1600138909730014, guid: 218268327a7c145b8880b1418e1da314, type: 2}
