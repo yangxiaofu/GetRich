@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Characters\Character.cs" />
+     <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\Clock.cs" />
      <Compile Include="Assets\_Core\ClockFake.cs" />
      <Compile Include="Assets\_Core\DayManager.cs" />

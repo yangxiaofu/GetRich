@@ -9,8 +9,6 @@ namespace Game.Characters{
 
 		void Start(){
 			_aiCharacterControl = GetComponent<AICharacterControl>();
-
-
 			_aiCharacterControl.SetTarget(GameObject.Find("Walk Target").transform);
 		}
 	}
