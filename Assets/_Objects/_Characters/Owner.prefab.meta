@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 681f3c89223b84ec99e9be10aae9aaf2
+labels:
+- CharacterPrefabs
 timeCreated: 1506783497
 licenseType: Free
 NativeFormatImporter:

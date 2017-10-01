@@ -52,10 +52,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
+     <Compile Include="Assets\_Core\CharacterParent.cs" />
      <Compile Include="Assets\_Core\Clock.cs" />
      <Compile Include="Assets\_Core\ClockFake.cs" />
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
+     <Compile Include="Assets\_Core\ItemParent.cs" />
      <Compile Include="Assets\_Objects\_Characters\Character.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterConfig.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterMovement.cs" />

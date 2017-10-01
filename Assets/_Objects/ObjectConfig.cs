@@ -12,8 +12,6 @@ namespace Game.Objects{
 		{
 			return _objectPrefab;
 		}
-
-
 	}
 }
 

@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 23f9efca50ab749a5a456a32ab9d3de8
+labels:
+- ItemPrefabs
 timeCreated: 1506813995
 licenseType: Free
 NativeFormatImporter:

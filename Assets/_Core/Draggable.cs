@@ -9,6 +9,8 @@ namespace Game.Core{
     public class Draggable : MonoBehaviour
     {  
         CameraRaycaster _cameraRaycaster;
+		const string CHARACTER = "CHARACTER";
+		const string ITEM = "ITEM";
 
         void Start()
         {
@@ -40,7 +42,24 @@ namespace Game.Core{
         {
             if (Input.GetMouseButtonDown(0))
             {
+                transform.SetParent(FindParentFor(this.gameObject));
                 Destroy(this);
+            }
+        }
+
+        private Transform FindParentFor(GameObject itemObject)
+        {
+            if (itemObject.CompareTag(CHARACTER))
+            {
+                return FindObjectOfType<CharacterParent>().transform;
+            }
+            else if (itemObject.CompareTag(ITEM))
+            {
+                return  FindObjectOfType<ItemParent>().transform;
+            }
+            else
+            {
+                throw new UnityException("You forgot to set the item tag in " + itemObject.name);
             }
         }
     }

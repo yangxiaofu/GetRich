@@ -12,35 +12,41 @@ namespace Game.UI{
 		[SerializeField] ObjectConfig _objectConfig;
 		Button _button;
 		Text _text;
-
 		CameraRaycaster _cameraRaycaster;
 
-		void Start(){
+		void Awake(){
 			Assert.IsNotNull(_objectConfig);
-
-			_button = GetComponent<Button>();
-			_button.onClick.AddListener(InstantiateItemToMouse);
-
-			_text = GetComponentInChildren<Text>();
-			_text.text = _objectConfig.objectName;
-
-			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
-
-			Assert.IsNotNull(
-				_cameraRaycaster, 
-				"There is no camera raycaster attached to a game object in the scene."
-			);
-
 		}
+		void Start()
+        {
+            SetupVariables();
+        }
 
-		void InstantiateItemToMouse()
-		{
-			var itemObject = Instantiate(_objectConfig.GetObjectPrefab());
-			itemObject.transform.position = _cameraRaycaster.GetMousePositionOnGround();
-			itemObject.AddComponent<Draggable>();
-		}
+        private void InstantiateItemToMouse()
+        {
+            var itemObject = Instantiate(_objectConfig.GetObjectPrefab());
+            itemObject.transform.position = _cameraRaycaster.GetMousePositionOnGround();
+            itemObject.AddComponent<Draggable>();
+        }
 
+       
 
-	}
+		private void SetupVariables()
+        {
+            _button = GetComponent<Button>();
+            _button.onClick.AddListener(InstantiateItemToMouse);
+
+            _text = GetComponentInChildren<Text>();
+            _text.text = _objectConfig.objectName;
+
+            _cameraRaycaster = FindObjectOfType<CameraRaycaster>();
+
+            Assert.IsNotNull(
+                _cameraRaycaster,
+                "There is no camera raycaster attached to a game object in the scene."
+            );
+        }
+
+    }
 
 }
