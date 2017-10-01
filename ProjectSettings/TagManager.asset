@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CHARACTER
   - ITEM
+  - Desk
   layers:
   - Default
   - TransparentFX

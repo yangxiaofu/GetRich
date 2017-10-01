@@ -15,3 +15,4 @@ MonoBehaviour:
   _objectPrefab: {fileID: 1663912339225188, guid: 23f9efca50ab749a5a456a32ab9d3de8,
     type: 2}
   _cost: 500
+  tag: Desk

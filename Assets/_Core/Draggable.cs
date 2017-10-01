@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using Game.Objects;
+using Game.Objects.Items;
+using Game.Objects.Characters;
 using Game.Finances;
 
 namespace Game.Core{
@@ -59,7 +61,19 @@ namespace Game.Core{
             {
                 OnObjectDropped(_objectConfig);
                 transform.SetParent(FindParentFor(this.gameObject));
+                AddObjectBehavoursToGameObject();
                 Destroy(this);
+            }
+        }
+
+        private void AddObjectBehavoursToGameObject()
+        {
+            if (this.gameObject.CompareTag(ITEM))
+            {
+                var itemBehaviour = this.gameObject.AddComponent<ItemBehaviour>();
+                itemBehaviour.SetupConfig(_objectConfig as ItemConfig);
+            } else if (this.gameObject.CompareTag(CHARACTER)){
+                this.gameObject.GetComponent<CharacterMovement>().FindOpenDesk();
             }
         }
 

@@ -62,6 +62,7 @@
      <Compile Include="Assets\_Objects\_Characters\Character.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterConfig.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterMovement.cs" />
+     <Compile Include="Assets\_Objects\_Items\ItemBehaviour.cs" />
      <Compile Include="Assets\_Objects\_Items\ItemConfig.cs" />
      <Compile Include="Assets\_Objects\ObjectConfig.cs" />
      <Compile Include="Assets\_Tasks\_FakeTake2\DecreaseButton.cs" />
