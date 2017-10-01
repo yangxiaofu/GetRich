@@ -59,6 +59,7 @@
      <Compile Include="Assets\_Core\Draggable.cs" />
      <Compile Include="Assets\_Core\ItemParent.cs" />
      <Compile Include="Assets\_Core\Tags.cs" />
+     <Compile Include="Assets\_Core\Time.cs" />
      <Compile Include="Assets\_Finance\FinanceSystem.cs" />
      <Compile Include="Assets\_Objects\_Characters\Character.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterConfig.cs" />
@@ -66,6 +67,8 @@
      <Compile Include="Assets\_Objects\_Items\ItemBehaviour.cs" />
      <Compile Include="Assets\_Objects\_Items\ItemConfig.cs" />
      <Compile Include="Assets\_Objects\ObjectConfig.cs" />
+     <Compile Include="Assets\_Products\ProductConfig.cs" />
+     <Compile Include="Assets\_Products\ProductSystem.cs" />
      <Compile Include="Assets\_Tasks\_FakeTake2\DecreaseButton.cs" />
      <Compile Include="Assets\_Tasks\_FakeTake2\IncreaseButton.cs" />
      <Compile Include="Assets\_Tasks\Task.cs" />

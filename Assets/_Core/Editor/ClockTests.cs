@@ -21,8 +21,8 @@ namespace Game.Core.Tests{
 			int hoursToAdvance = 2;
 			int hour = 8;
 			int AnyMinute = 0;
-			
-			_clock.SetupMinutes(AnyMinute, hour);
+			var time = new Core.Time(hour, AnyMinute);
+			_clock.SetupTime(time);
 			_clock.AdvanceClock(hoursToAdvance);
 
 			Assert.AreEqual(
@@ -77,36 +77,73 @@ namespace Game.Core.Tests{
 
 		[TestAttribute]
 		public void T06UpdateHourHand_ReturnsGreaterThan12(){
-			_clock.SetupMinutes(60, 5);
+			int hour = 5;
+			int AnyMinute = 60;
+
+			var time = new Core.Time(hour, AnyMinute);
+			_clock.SetupTime(time);
 			Assert.AreEqual(6, _clock.hour);
 		}
 
 		[TestAttribute]
 		public void T07IsAM_ReturnsAM()
 		{
-			_clock.SetupMinutes(60, 8);
+
+			int hour = 8;
+			int AnyMinute = 60;
+			var time = new Core.Time(hour, AnyMinute);
+			_clock.SetupTime(time);
 			Assert.AreEqual(true, _clock.isAM);
 		}
 
 		[TestAttribute]
 		public void T08isAM_ReturnsPM()
 		{
-			_clock.SetupMinutes(60, 12);
+			int hour = 12;
+			int AnyMinute = 60;
+			var time = new Core.Time(hour, AnyMinute);
+			_clock.SetupTime(time);
 			Assert.AreEqual(false, _clock.isAM);
 		}
 
 		[TestAttribute]
 		public void T09UpdateHourHand_ReturnsZero()
 		{
-			_clock.SetupMinutes(60, 24);
+			int hour = 24;
+			int AnyMinute = 60;
+			var time = new Core.Time(hour, AnyMinute);
+			_clock.SetupTime(time);
 			Assert.AreEqual(0, _clock.hour);
 		}
 
 		[TestAttribute]
 		public void T10UpdateHourHand_ReturnsOne()
 		{
-			_clock.SetupMinutes(60, 0);
+			int hour = 0;
+			int AnyMinute = 60;
+			var time = new Core.Time(hour, AnyMinute);
+			_clock.SetupTime(time);
 			Assert.AreEqual(1, _clock.hour);
+		}
+
+		[TestAttribute]
+		public void T11UpdateHourHand_ReturnsTrueOpenHours()
+		{
+			int hour = 8;
+			int AnyMinute = 0;
+			var time = new Core.Time(hour, AnyMinute);
+			_clock.SetupTime(time);
+			Assert.IsTrue(_clock.openHours);
+		}
+
+		[TestAttribute]
+		public void T12UpdateHourHand_ReturnsFalseOpenHours()
+		{
+			int hour = 7;
+			int AnyMinute = 0;
+			var time = new Core.Time(hour, AnyMinute);
+			_clock.SetupTime(time);
+			Assert.IsFalse(_clock.openHours);
 		}
 	}	
 

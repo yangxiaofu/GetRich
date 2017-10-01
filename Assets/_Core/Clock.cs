@@ -13,12 +13,8 @@ namespace Game.Core{
 		public int hour {get{return _hour;}}
 		[SerializeField] float _minute = 0;
 		public int minute{get{return (int)_minute;}}
-		public bool isAM{
-			get{
-				return _hour < 12;
-			}
-		}
-
+		public bool isAM{get{return _hour < 12;}}
+		
 		[SerializeField] float _minutesPassedPerSecond = 1;
 		float _minutesInAnHour = 60f;
 
@@ -34,8 +30,15 @@ namespace Game.Core{
 			get{return _currentTimeOfDay;}
 		}
 
+		public bool openHours{
+			get{return _hour >= _startTimeOfDay && _hour <= _endTimeOfDay;}
+		}
+
 		public delegate void EndOfDay();
 		public event EndOfDay OnEndOfDay;
+
+		public delegate void TimeForUpdate();
+		public event TimeForUpdate OnTimeForUpdate;
 
 		void Start()
         {
@@ -45,25 +48,34 @@ namespace Game.Core{
 
 		void Update()
 		{
-			_minute += Time.deltaTime * _minutesPassedPerSecond;
+			_minute += UnityEngine.Time.deltaTime * _minutesPassedPerSecond;
 			UpdateHourHand(_minute);
 		}
 
 		///<summary>Used for Unit Testing</summary>
-		public void SetupMinutes(float minute, int hour) 
+		public void SetupTime(Core.Time time) 
 		{ 
-			_hour = hour;
-			_minute = minute;
+			_hour = time.hour;
+			_minute = time.minute;
 			UpdateHourHand(minute);
 		}
 
 		private void UpdateHourHand(float minutes)
-		{
-			if (minutes < _minutesInAnHour) return;
-			_minute = 0;
-			_hour += 1;
-			if (_hour >= 24) _hour = 0;
-		}
+        {
+            if (minutes < _minutesInAnHour) return;
+
+            _minute = 0;
+            _hour += 1;
+
+            NotifyTimeUpdateObservers();
+
+            if (_hour >= 24) _hour = 0;
+        }
+
+        private void NotifyTimeUpdateObservers()
+        {
+            if (OnTimeForUpdate != null) OnTimeForUpdate();
+        }
 
         public void AdvanceClock(int hours)
 		{
@@ -74,6 +86,7 @@ namespace Game.Core{
 			if (OnEndOfDay != null) OnEndOfDay();
 
 			GetComponent<DayManager>().AdvanceDay();
+
 			ResetClock();
 		}
 

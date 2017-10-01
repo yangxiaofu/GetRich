@@ -44,22 +44,22 @@ namespace Game.Core{
         {
             if (Input.mousePosition.x > _screenWidth - _boundary && Input.mousePosition.x < _screenWidth)
             {
-                this.transform.Translate(_speed * Time.deltaTime, 0, 0);
+                this.transform.Translate(_speed * UnityEngine.Time.deltaTime, 0, 0);
             }
 
             if (Input.mousePosition.x < _boundary && Input.mousePosition.x > 0)
             {
-                this.transform.Translate(-_speed * Time.deltaTime, 0, 0);
+                this.transform.Translate(-_speed * UnityEngine.Time.deltaTime, 0, 0);
             }
 
             if (Input.mousePosition.y > _screenHeight - _boundary && Input.mousePosition.y < _screenHeight)
             {
-                this.transform.Translate(0, _speed * Time.deltaTime, 0);
+                this.transform.Translate(0, _speed * UnityEngine.Time.deltaTime, 0);
             }
 
             if (Input.mousePosition.y < _boundary && Input.mousePosition.y > 0)
             {
-                this.transform.Translate(0, -_speed * Time.deltaTime, 0);
+                this.transform.Translate(0, -_speed * UnityEngine.Time.deltaTime, 0);
             }
         }
 
