@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Assertions;
 using Game.Core;
 
 namespace Game.UI{
 	public class ClockUI : MonoBehaviour {
 
-		[SerializeField] Clock _clock;
-
-		Text _text;
-
+		Clock _clock;
+		[SerializeField] Text _hourText;
+		[SerializeField] Text _minuteText;
 
 		void Start()
 		{
-			if (!_clock) Debug.LogError("You need to reference the clock in the Clock UI");
-
-			_text = GetComponent<Text>();
-			if (!_text) Debug.LogError("You need to add the Text component on to this game object");
+			Assert.IsNotNull(_hourText);
+			Assert.IsNotNull(_minuteText);
+			_clock = FindObjectOfType<Clock>();
+			Assert.IsNotNull(_clock);
 		}
 
 		void Update()
 		{
-			_text.text = _clock.currentTimeOfDay.ToString();
+			_hourText.text = _clock.hour.ToString();
+			_minuteText.text = _clock.minute.ToString();
 		}
 	}
 }

@@ -11,5 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2dfb6a046c6845879e63dc154f8d09b, type: 3}
   m_Name: Desk
   m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 1663912339225188, guid: 23f9efca50ab749a5a456a32ab9d3de8,
+  _objectName: Desk
+  _objectPrefab: {fileID: 1663912339225188, guid: 23f9efca50ab749a5a456a32ab9d3de8,
     type: 2}
+  _cost: 500

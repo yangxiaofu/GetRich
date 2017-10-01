@@ -11,4 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b9022b5139a4e43895d1988ac8c8ea, type: 3}
   m_Name: Owner
   m_EditorClassIdentifier: 
-  _character: {fileID: 0}
+  _objectName: Owner
+  _objectPrefab: {fileID: 1416307708038500, guid: 681f3c89223b84ec99e9be10aae9aaf2,
+    type: 2}
+  _cost: 0

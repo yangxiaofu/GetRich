@@ -26,10 +26,9 @@ namespace Game.UI{
         {
             var itemObject = Instantiate(_objectConfig.GetObjectPrefab());
             itemObject.transform.position = _cameraRaycaster.GetMousePositionOnGround();
-            itemObject.AddComponent<Draggable>();
+            var draggable = itemObject.AddComponent<Draggable>();
+            draggable.Setup(_objectConfig);
         }
-
-       
 
 		private void SetupVariables()
         {

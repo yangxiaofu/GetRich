@@ -58,6 +58,7 @@
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
      <Compile Include="Assets\_Core\ItemParent.cs" />
+     <Compile Include="Assets\_Finance\FinanceSystem.cs" />
      <Compile Include="Assets\_Objects\_Characters\Character.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterConfig.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterMovement.cs" />
@@ -69,6 +70,7 @@
      <Compile Include="Assets\_Tasks\TaskManager.cs" />
      <Compile Include="Assets\_UI\AddItemButton.cs" />
      <Compile Include="Assets\_UI\ClockUI.cs" />
+     <Compile Include="Assets\_UI\CurrentCashUI.cs" />
      <Compile Include="Assets\_UI\DayList.cs" />
      <Compile Include="Assets\_UI\DayUI.cs" />
      <Compile Include="Assets\_UI\HoursToConsume.cs" />

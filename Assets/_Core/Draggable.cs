@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
+using Game.Objects;
+using Game.Finances;
 
 namespace Game.Core{
     public class Draggable : MonoBehaviour
@@ -11,11 +13,24 @@ namespace Game.Core{
         CameraRaycaster _cameraRaycaster;
 		const string CHARACTER = "CHARACTER";
 		const string ITEM = "ITEM";
+        ObjectConfig _objectConfig;
+        FinanceSystem _financeSystem;
+
+        public delegate void ObjectDropped(ObjectConfig objectConfig);
+        public event ObjectDropped OnObjectDropped;
 
         void Start()
         {
             _cameraRaycaster = FindObjectOfType<CameraRaycaster>();
             Assert.IsNotNull(_cameraRaycaster);
+
+            _financeSystem = FindObjectOfType<FinanceSystem>();
+            OnObjectDropped += _financeSystem.OnObjectDropped;
+        }
+
+        public void Setup(ObjectConfig objectConfig)
+        {
+            _objectConfig = objectConfig;
         }
 
         void Update()
@@ -42,6 +57,7 @@ namespace Game.Core{
         {
             if (Input.GetMouseButtonDown(0))
             {
+                OnObjectDropped(_objectConfig);
                 transform.SetParent(FindParentFor(this.gameObject));
                 Destroy(this);
             }

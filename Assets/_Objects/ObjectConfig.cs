@@ -8,9 +8,14 @@ namespace Game.Objects{
 		[SerializeField] string _objectName;
 		public string objectName{get{return _objectName;}}
 		[SerializeField] GameObject _objectPrefab;
+		[SerializeField] float _cost = 100f;
 		public GameObject GetObjectPrefab()
 		{
 			return _objectPrefab;
+		}
+
+		public float GetCost(){
+			return _cost;
 		}
 	}
 }
