@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
-namespace Game.Characters{
-	public class Character : MonoBehaviour {
+namespace Game.Objects.Characters{
+	public class CharacterMovement : MonoBehaviour {
 		AICharacterControl _aiCharacterControl;
 
 		void Start(){

@@ -3,27 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
-using Game.Items;
+using Game.Objects;
 using Game.Core;
 
 namespace Game.UI{
 	[RequireComponent(typeof(Button))]
 	public class AddItemButton : MonoBehaviour {
-		[SerializeField] ItemConfig _itemConfig;
-
+		[SerializeField] ObjectConfig _objectConfig;
 		Button _button;
 		Text _text;
 
 		CameraRaycaster _cameraRaycaster;
 
 		void Start(){
-			Assert.IsNotNull(_itemConfig);
+			Assert.IsNotNull(_objectConfig);
 
 			_button = GetComponent<Button>();
 			_button.onClick.AddListener(InstantiateItemToMouse);
 
 			_text = GetComponentInChildren<Text>();
-			_text.text = _itemConfig.itemName;
+			_text.text = _objectConfig.objectName;
 
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
 
@@ -36,10 +35,9 @@ namespace Game.UI{
 
 		void InstantiateItemToMouse()
 		{
-			var itemObject = Instantiate(_itemConfig.GetItemPrefab());
+			var itemObject = Instantiate(_objectConfig.GetObjectPrefab());
 			itemObject.transform.position = _cameraRaycaster.GetMousePositionOnGround();
 			itemObject.AddComponent<Draggable>();
-			print("Item to Mouse.  Item can be draggable on the mouse. ");
 		}
 
 

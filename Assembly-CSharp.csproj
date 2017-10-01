@@ -51,13 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Characters\Character.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\Clock.cs" />
      <Compile Include="Assets\_Core\ClockFake.cs" />
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
-     <Compile Include="Assets\_Items\ItemConfig.cs" />
+     <Compile Include="Assets\_Objects\_Characters\Character.cs" />
+     <Compile Include="Assets\_Objects\_Characters\CharacterConfig.cs" />
+     <Compile Include="Assets\_Objects\_Characters\CharacterMovement.cs" />
+     <Compile Include="Assets\_Objects\_Items\ItemConfig.cs" />
+     <Compile Include="Assets\_Objects\ObjectConfig.cs" />
      <Compile Include="Assets\_Tasks\_FakeTake2\DecreaseButton.cs" />
      <Compile Include="Assets\_Tasks\_FakeTake2\IncreaseButton.cs" />
      <Compile Include="Assets\_Tasks\Task.cs" />
