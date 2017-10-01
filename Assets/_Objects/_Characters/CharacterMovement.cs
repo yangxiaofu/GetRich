@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using Game.Objects.Items;
+using Game.Core;
 
 namespace Game.Objects.Characters{
 	public class CharacterMovement : MonoBehaviour {
 		AICharacterControl _aiCharacterControl;
-		const string DESK = "Desk"; //TODO: Centralize the tag names somehwere.
+		Tags _tags;
 		bool _foundDesk = false;
 		void Start()
 		{
 			_aiCharacterControl = GetComponent<AICharacterControl>();
+			_tags = FindObjectOfType<Tags>();
 		}
 
 		void Update()
@@ -23,7 +25,7 @@ namespace Game.Objects.Characters{
 		{
 			if (_foundDesk) return;
 
-			var desks = GameObject.FindGameObjectsWithTag(DESK);
+			var desks = GameObject.FindGameObjectsWithTag(_tags.DESK);
 
 			for(int i  = 0; i < desks.Length; i++)
 			{

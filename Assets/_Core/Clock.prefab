@@ -52,6 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66b3e266ee98439fa4e4cc12d2d6bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hour: 0
+  _minute: 0
+  _minutesPassedPerSecond: 10
   _startTimeOfDay: 8
   _endTimeOfDay: 17
 --- !u!114 &114737086896379166

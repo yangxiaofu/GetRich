@@ -58,6 +58,7 @@
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
      <Compile Include="Assets\_Core\ItemParent.cs" />
+     <Compile Include="Assets\_Core\Tags.cs" />
      <Compile Include="Assets\_Finance\FinanceSystem.cs" />
      <Compile Include="Assets\_Objects\_Characters\Character.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterConfig.cs" />

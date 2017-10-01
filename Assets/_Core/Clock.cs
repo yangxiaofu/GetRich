@@ -11,8 +11,8 @@ namespace Game.Core{
 		[HeaderAttribute("Timer")]
 		[SerializeField] int _hour = 0;
 		public int hour {get{return _hour;}}
-		[SerializeField] float _minutes = 0;
-		public int minute{get{return (int)_minutes;}}
+		[SerializeField] float _minute = 0;
+		public int minute{get{return (int)_minute;}}
 		public bool isAM{
 			get{
 				return _hour < 12;
@@ -20,7 +20,7 @@ namespace Game.Core{
 		}
 
 		[SerializeField] float _minutesPassedPerSecond = 1;
-		float _minutesInAnHour = 60;
+		float _minutesInAnHour = 60f;
 
 		[HeaderAttribute("Work Day Variables")]
 		[SerializeField] int _startTimeOfDay = 8;
@@ -45,26 +45,24 @@ namespace Game.Core{
 
 		void Update()
 		{
-			_minutes += Time.deltaTime * _minutesPassedPerSecond;
-			UpdateHourHand(_minutes);
+			_minute += Time.deltaTime * _minutesPassedPerSecond;
+			UpdateHourHand(_minute);
 		}
 
 		///<summary>Used for Unit Testing</summary>
-		public void SetupMinutes(float minutes, int hour) 
+		public void SetupMinutes(float minute, int hour) 
 		{ 
 			_hour = hour;
-			UpdateHourHand(minutes);
+			_minute = minute;
+			UpdateHourHand(minute);
 		}
 
 		private void UpdateHourHand(float minutes)
 		{
 			if (minutes < _minutesInAnHour) return;
-			
+			_minute = 0;
 			_hour += 1;
-
 			if (_hour >= 24) _hour = 0;
-
-			minutes = 0;
 		}
 
         public void AdvanceClock(int hours)

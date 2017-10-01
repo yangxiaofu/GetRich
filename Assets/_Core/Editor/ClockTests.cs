@@ -19,7 +19,10 @@ namespace Game.Core.Tests{
 		public void T01AdvanceClock_ReturnsClockAdvancedByTwo()
 		{
 			int hoursToAdvance = 2;
+			int hour = 8;
+			int AnyMinute = 0;
 			
+			_clock.SetupMinutes(AnyMinute, hour);
 			_clock.AdvanceClock(hoursToAdvance);
 
 			Assert.AreEqual(
