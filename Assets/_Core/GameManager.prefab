@@ -19,9 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4118562269518324}
+  - component: {fileID: 114060874501593426}
   - component: {fileID: 114774109411479662}
   - component: {fileID: 114262349677249796}
   - component: {fileID: 114424139804824590}
+  - component: {fileID: 114217748489864648}
+  - component: {fileID: 114110432182379970}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -42,6 +45,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114060874501593426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121473559738406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7752c8804b04a6dae043805c7c2c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114110432182379970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121473559738406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66b3e266ee98439fa4e4cc12d2d6bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hour: 0
+  _minute: 0
+  _minutesPassedPerSecond: 10
+  _startHour: 8
+  _endHour: 17
+--- !u!114 &114217748489864648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121473559738406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158d6e2db4a75460bbbf743a3d21f2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tasksForTheDay: []
+  _currentDay: 0
 --- !u!114 &114262349677249796
 MonoBehaviour:
   m_ObjectHideFlags: 1

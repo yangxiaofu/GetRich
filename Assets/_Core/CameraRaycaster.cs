@@ -12,15 +12,11 @@ namespace Game.Core{
 		public Vector3 GetMousePositionOnGround() {return _mousePositionOnGround;}
 		float _raycastDistance = 50f;
 		const int GROUND_LAYER_BIT = 8;
-		
-		void Start()
-		{
-			_screenWidth = Screen.width;
-			_screenHeight = Screen.height;
-		}
 
 		void Update()
         {
+            _screenWidth = Screen.width;
+			_screenHeight = Screen.height;
             ScanForMouseInBoundaries();
         }
 

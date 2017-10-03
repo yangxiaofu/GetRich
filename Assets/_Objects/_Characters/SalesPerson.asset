@@ -14,4 +14,7 @@ MonoBehaviour:
   _objectName: Sales Person
   _objectPrefab: {fileID: 1792404010260546, guid: 716bc7446d2994caab68c00e3d3eb0c7,
     type: 2}
-  _cost: 100
+  _initialCost: 0
+  _costPerHour: 25
+  _productSalesPerHour: 5
+  _productDemandCreatedPerHour: 1

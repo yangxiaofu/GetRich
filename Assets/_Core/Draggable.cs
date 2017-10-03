@@ -74,6 +74,7 @@ namespace Game.Core{
                 itemBehaviour.SetupConfig(_objectConfig as ItemConfig);
             } else if (this.gameObject.CompareTag(CHARACTER)){
                 this.gameObject.GetComponent<CharacterMovement>().FindOpenDesk();
+                this.gameObject.GetComponent<Character>().Setup(_objectConfig as CharacterConfig);
             }
         }
 

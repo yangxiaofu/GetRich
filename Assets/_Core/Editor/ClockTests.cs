@@ -21,13 +21,15 @@ namespace Game.Core.Tests{
 			int hoursToAdvance = 2;
 			int hour = 8;
 			int AnyMinute = 0;
+
 			var time = new Core.Time(hour, AnyMinute);
+
 			_clock.SetupTime(time);
-			_clock.AdvanceClock(hoursToAdvance);
+			_clock.AdvanceClockBy(hoursToAdvance);
 
 			Assert.AreEqual(
-				_clock.startTimeOfDay + hoursToAdvance, 
-				_clock.currentTimeOfDay
+				hour + hoursToAdvance, 
+				_clock.hour
 			);
 		}
 
@@ -35,9 +37,9 @@ namespace Game.Core.Tests{
 		public void T02ResetClock_ResetsClockAtStartTime()
 		{
 			int anyNumberOtherThanZero = 5;
-			_clock.AdvanceClock(anyNumberOtherThanZero);
+			_clock.AdvanceClockBy(anyNumberOtherThanZero);
 			_clock.ResetClock();
-			Assert.AreEqual(_clock.startTimeOfDay, _clock.currentTimeOfDay);
+			Assert.AreEqual(_clock.startHour, _clock.hour);
 		}
 
 		[TestAttribute]
@@ -46,7 +48,7 @@ namespace Game.Core.Tests{
 			int anyNumberOtherThanNine = 10;
 			var clockFake = new ClockFake();
 			clockFake.RegisterToClock();
-			_clock.AdvanceClock(anyNumberOtherThanNine);
+			_clock.AdvanceClockBy(anyNumberOtherThanNine);
 
 			Assert.IsTrue(clockFake.endOfDayTriggered);
 		}
@@ -58,7 +60,7 @@ namespace Game.Core.Tests{
 			var clockFake = new ClockFake();
 			clockFake.RegisterToClock();
 			_clock.ResetClock();
-			_clock.AdvanceClock(anyNumberOtherThanNine);
+			_clock.AdvanceClockBy(anyNumberOtherThanNine);
 
 			Assert.IsFalse(clockFake.endOfDayTriggered);
 		}
@@ -66,29 +68,32 @@ namespace Game.Core.Tests{
 		[TestAttribute]
 		public void T05AdvanceClock_DayAdvancesADay()
 		{
-			
-			int anyNumberGreaterThanNine = 10;
-			
+			int oneHour = 1;
+
+			_clock.SetupTime(new Core.Time(23, 0));
+
 			_clock.GetComponent<DayManager>().ResetDayManager();
-			_clock.AdvanceClock(anyNumberGreaterThanNine);
+
+			_clock.AdvanceClockBy(oneHour);
+
 			var sut = _clock.GetComponent<DayManager>();
+
 			Assert.AreEqual(1, sut.currentDay);
 		}
 
 		[TestAttribute]
-		public void T06UpdateHourHand_ReturnsGreaterThan12(){
+		public void T06UpdateHourHand_HourAdvancesByOne(){
 			int hour = 5;
-			int AnyMinute = 60;
+			int minuteAtSixty = 60;
 
-			var time = new Core.Time(hour, AnyMinute);
+			var time = new Core.Time(hour, minuteAtSixty);
 			_clock.SetupTime(time);
-			Assert.AreEqual(6, _clock.hour);
+			Assert.AreEqual(hour + 1, _clock.hour);
 		}
 
 		[TestAttribute]
 		public void T07IsAM_ReturnsAM()
 		{
-
 			int hour = 8;
 			int AnyMinute = 60;
 			var time = new Core.Time(hour, AnyMinute);

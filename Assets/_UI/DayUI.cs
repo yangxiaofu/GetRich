@@ -7,11 +7,12 @@ using Game.Core;
 
 namespace Game.UI{
 	public class DayUI : MonoBehaviour {
-		[SerializeField] DayManager _dayManager;
+		DayManager _dayManager;
 		Text _text;
 
 		void Start()
 		{
+			_dayManager = FindObjectOfType<DayManager>();
 			Assert.IsNotNull(_dayManager);
 
 			_text = GetComponent<Text>();

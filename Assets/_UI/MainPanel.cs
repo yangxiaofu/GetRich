@@ -60,7 +60,7 @@ namespace Game.UI{
 
 		private void PerformTask()
 		{
-			_clock.AdvanceClock(_hoursToConsume);
+			_clock.AdvanceClockBy(_hoursToConsume);
 			
 			Destroy(this.gameObject);
 		}

@@ -14,4 +14,7 @@ MonoBehaviour:
   _objectName: Owner
   _objectPrefab: {fileID: 1416307708038500, guid: 681f3c89223b84ec99e9be10aae9aaf2,
     type: 2}
-  _cost: 0
+  _initialCost: 0
+  _costPerHour: 50
+  _productSalesPerHour: 2
+  _productDemandCreatedPerHour: 1

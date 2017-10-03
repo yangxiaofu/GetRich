@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6669b49920c4813af24f2182664b4c, type: 3}
   m_Name: Product
   m_EditorClassIdentifier: 
-  _pricePerUnit: 10
-  _costPerUnit: 5
+  _productName: NewProductInvention
+  _pricePerUnit: 60
+  _costPerUnit: 30

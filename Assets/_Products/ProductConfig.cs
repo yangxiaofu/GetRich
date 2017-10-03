@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Objects.Products{
 	[CreateAssetMenuAttribute(menuName = "Game/Product")]
-	public class ProductConfig : ScriptableObject {
+	public class ProductConfig : ScriptableObject, IProductConfig {
 		[SerializeField] string _productName = "";
 		public string productName{get{return _productName;}}
 		[SerializeField] float _pricePerUnit = 10f;
@@ -17,7 +17,11 @@ namespace Game.Objects.Products{
 		{
 			return _costPerUnit;
 		}
+	}
 
+	public interface IProductConfig{
+		float GetPricePerUnit();
+		float GetCostPerUnit();
 	}
 
 }

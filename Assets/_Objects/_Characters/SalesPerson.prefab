@@ -2530,6 +2530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dailySalary: 10
+  _config: {fileID: 11400000, guid: d12d79f1bab54496a9d09c212f0cd8bf, type: 2}
+  _isWorking: 1
 --- !u!114 &114738090881241632
 MonoBehaviour:
   m_ObjectHideFlags: 1

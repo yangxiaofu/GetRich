@@ -14,36 +14,31 @@ namespace Game.Core{
 		[SerializeField] float _minute = 0;
 		public int minute{get{return (int)_minute;}}
 		public bool isAM{get{return _hour < 12;}}
-		
 		[SerializeField] float _minutesPassedPerSecond = 1;
 		float _minutesInAnHour = 60f;
 
 		[HeaderAttribute("Work Day Variables")]
-		[SerializeField] int _startTimeOfDay = 8;
-		public int startTimeOfDay{
-			get{return _startTimeOfDay;}
+		[SerializeField] int _startHour = 8;
+		public int startHour{
+			get{return _startHour;}
 		}
-		[SerializeField] int _endTimeOfDay = 17;
-		int _currentTimeOfDay = 8;
-
-		public int currentTimeOfDay{
-			get{return _currentTimeOfDay;}
-		}
-
+		[SerializeField] int _endHour = 17;
 		public bool openHours{
-			get{return _hour >= _startTimeOfDay && _hour <= _endTimeOfDay;}
+			get{return _hour >= _startHour && _hour <= _endHour;}
 		}
 
 		public delegate void EndOfDay();
 		public event EndOfDay OnEndOfDay;
+
+		public delegate void StartOfDay();
+		public event EndOfDay OnStartOfDay;
 
 		public delegate void TimeForUpdate();
 		public event TimeForUpdate OnTimeForUpdate;
 
 		void Start()
         {
-            _currentTimeOfDay = _startTimeOfDay;
-			_hour = _startTimeOfDay;
+            _hour = _startHour;
         }
 
 		void Update()
@@ -60,16 +55,20 @@ namespace Game.Core{
 			UpdateHourHand(minute);
 		}
 
-		private void UpdateHourHand(float minutes)
+		private void UpdateHourHand(float minute)
         {
-            if (minutes < _minutesInAnHour) return;
+            if (minute >= _minutesInAnHour)
+			{
+				Debug.Log(1);
+				_minute = 0;
+				_hour += 1;
 
-            _minute = 0;
-            _hour += 1;
+				NotifyTimeUpdateObservers();
 
-            NotifyTimeUpdateObservers();
-
-            if (_hour >= 24) _hour = 0;
+				if (_hour >= 24){
+					_hour = 0;
+				} 
+			}
         }
 
         private void NotifyTimeUpdateObservers()
@@ -77,22 +76,36 @@ namespace Game.Core{
             if (OnTimeForUpdate != null) OnTimeForUpdate();
         }
 
-        public void AdvanceClock(int hours)
+        public void AdvanceClockBy(int hours)
 		{
-			_currentTimeOfDay += hours;
+			_hour += hours;
+			
+			if (_hour == 24)
+			{
+				_hour = 0;
+			}
 
-			if (_currentTimeOfDay < _endTimeOfDay) return;
-		
-			if (OnEndOfDay != null) OnEndOfDay();
+			if (_hour == 0)
+			{
+				GetComponent<DayManager>().AdvanceDay();
+			}
 
-			GetComponent<DayManager>().AdvanceDay();
+			if (_hour >= _endHour) 
+			{
+				if (OnEndOfDay != null){
+				 	OnEndOfDay();
+				}
+			}
 
-			ResetClock();
+			if (_hour >= _startHour - 1)
+			{
+				if (OnStartOfDay != null) OnStartOfDay();
+			}
 		}
 
 		public void ResetClock()
 		{
-			_currentTimeOfDay = _startTimeOfDay;
+			_hour = _startHour;
 		}
 
 	}
