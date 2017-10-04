@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1080
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,7 +106,7 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1030
-  m_MinSize: {x: 508, y: 492}
+  m_MinSize: {x: 708, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 23
@@ -128,7 +128,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1454
+    width: 1618
     height: 1030
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
@@ -152,8 +152,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1454
-    height: 599
+    width: 1618
+    height: 753
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
@@ -174,10 +174,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 252
-    height: 599
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+    width: 284
+    height: 753
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -197,12 +197,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 252
+    x: 284
     y: 0
-    width: 1202
-    height: 599
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 1334
+    height: 753
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 599
-    width: 1454
-    height: 431
+    y: 753
+    width: 1618
+    height: 277
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 18}
@@ -251,20 +251,20 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1454
+    x: 1618
     y: 0
-    width: 466
+    width: 302
     height: 1030
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 302, y: 381}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 20}
   - {fileID: 12}
   - {fileID: 21}
   - {fileID: 22}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 2
+  m_LastSelected: 3
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -286,9 +286,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1456
+    x: 1620
     y: 49
-    width: 464
+    width: 300
     height: 1009
   m_IsSceneBased: 0
   m_TestTypeToolbarIndex: 1
@@ -309,6 +309,17 @@ MonoBehaviour:
     - id: '[/Users/fudaviddong/Documents/_GetRich/GetRich/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
       name: Assembly-CSharp.dll
       fullName: /Users/fudaviddong/Documents/_GetRich/GetRich/Library/ScriptAssemblies/Assembly-CSharp.dll
+      resultStatus: 2
+      duration: 0
+      messages: Has no TestFixtures
+      output: 
+      stacktrace: 
+      notRunnable: 1
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[/Users/fudaviddong/Documents/_GetRich/GetRich/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll][suite]'
+      name: Assembly-CSharp-firstpass.dll
+      fullName: /Users/fudaviddong/Documents/_GetRich/GetRich/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
       resultStatus: 2
       duration: 0
       messages: Has no TestFixtures
@@ -358,9 +369,9 @@ MonoBehaviour:
     - id: '[/Users/fudaviddong/Documents/_GetRich/GetRich/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
       name: Assembly-CSharp-Editor.dll
       fullName: /Users/fudaviddong/Documents/_GetRich/GetRich/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-      resultStatus: 2
-      duration: 0.243248
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.465865
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -369,9 +380,9 @@ MonoBehaviour:
     - id: '[Game][suite]'
       name: Game
       fullName: Game
-      resultStatus: 2
-      duration: 0.228294
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.441787
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -380,9 +391,9 @@ MonoBehaviour:
     - id: '[Game.Core][suite]'
       name: Core
       fullName: Game.Core
-      resultStatus: 2
-      duration: 0.299721
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.380577
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -391,9 +402,9 @@ MonoBehaviour:
     - id: '[Game.Core.Tests][suite]'
       name: Tests
       fullName: Game.Core.Tests
-      resultStatus: 2
-      duration: 0.289013
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.368482
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -402,9 +413,9 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.ClockTests][suite]'
       name: ClockTests
       fullName: Game.Core.Tests.ClockTests
-      resultStatus: 2
-      duration: 0.277718
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.27347
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -414,7 +425,7 @@ MonoBehaviour:
       name: T01AdvanceClock_ReturnsClockAdvancedByTwo
       fullName: Game.Core.Tests.ClockTests.T01AdvanceClock_ReturnsClockAdvancedByTwo
       resultStatus: 1
-      duration: 0.017693
+      duration: 0.016845
       messages: 
       output: 
       stacktrace: 
@@ -425,7 +436,7 @@ MonoBehaviour:
       name: T02ResetClock_ResetsClockAtStartTime
       fullName: Game.Core.Tests.ClockTests.T02ResetClock_ResetsClockAtStartTime
       resultStatus: 1
-      duration: 0.007708
+      duration: 0.008583
       messages: 
       output: 
       stacktrace: 
@@ -436,7 +447,7 @@ MonoBehaviour:
       name: T03AdvanceClock_TriggersOnEndOfDayObservers
       fullName: Game.Core.Tests.ClockTests.T03AdvanceClock_TriggersOnEndOfDayObservers
       resultStatus: 1
-      duration: 0.009454
+      duration: 0.009374
       messages: 
       output: 
       stacktrace: 
@@ -447,7 +458,7 @@ MonoBehaviour:
       name: T04AdvanceClock_DoesNotTriggerEndOfDayObservers
       fullName: Game.Core.Tests.ClockTests.T04AdvanceClock_DoesNotTriggerEndOfDayObservers
       resultStatus: 1
-      duration: 0.008539
+      duration: 0.009239
       messages: 
       output: 
       stacktrace: 
@@ -457,24 +468,23 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.ClockTests.T05AdvanceClock_DayAdvancesADay]'
       name: T05AdvanceClock_DayAdvancesADay
       fullName: Game.Core.Tests.ClockTests.T05AdvanceClock_DayAdvancesADay
-      resultStatus: 2
-      duration: 0.022617
-      messages: "  Expected: 1\n  But was:  0\n"
+      resultStatus: 1
+      duration: 0.008442
+      messages: 
       output: 
-      stacktrace: 'at Game.Core.Tests.ClockTests.T05AdvanceClock_DayAdvancesADay ()
-        [0x0003d] in /Users/fudaviddong/Documents/_GetRich/GetRich/Assets/_Core/Editor/ClockTests.cs:75
-
-'
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.ClockTests.T06UpdateHourHand_ReturnsGreaterThan12]'
-      name: T06UpdateHourHand_ReturnsGreaterThan12
-      fullName: Game.Core.Tests.ClockTests.T06UpdateHourHand_ReturnsGreaterThan12
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.ClockTests.T06UpdateHourHand_HourAdvancesByOne]'
+      name: T06UpdateHourHand_HourAdvancesByOne
+      fullName: Game.Core.Tests.ClockTests.T06UpdateHourHand_HourAdvancesByOne
       resultStatus: 1
-      duration: 0.00843
+      duration: 0.012407
       messages: 
-      output: 
+      output: '1
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -483,9 +493,11 @@ MonoBehaviour:
       name: T07IsAM_ReturnsAM
       fullName: Game.Core.Tests.ClockTests.T07IsAM_ReturnsAM
       resultStatus: 1
-      duration: 0.011408
+      duration: 0.010805
       messages: 
-      output: 
+      output: '1
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -494,9 +506,11 @@ MonoBehaviour:
       name: T08isAM_ReturnsPM
       fullName: Game.Core.Tests.ClockTests.T08isAM_ReturnsPM
       resultStatus: 1
-      duration: 0.008667
+      duration: 0.009059
       messages: 
-      output: 
+      output: '1
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -505,9 +519,11 @@ MonoBehaviour:
       name: T09UpdateHourHand_ReturnsZero
       fullName: Game.Core.Tests.ClockTests.T09UpdateHourHand_ReturnsZero
       resultStatus: 1
-      duration: 0.008252
+      duration: 0.009261
       messages: 
-      output: 
+      output: '1
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -516,9 +532,11 @@ MonoBehaviour:
       name: T10UpdateHourHand_ReturnsOne
       fullName: Game.Core.Tests.ClockTests.T10UpdateHourHand_ReturnsOne
       resultStatus: 1
-      duration: 0.008827
+      duration: 0.008962
       messages: 
-      output: 
+      output: '1
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -527,7 +545,7 @@ MonoBehaviour:
       name: T11UpdateHourHand_ReturnsTrueOpenHours
       fullName: Game.Core.Tests.ClockTests.T11UpdateHourHand_ReturnsTrueOpenHours
       resultStatus: 1
-      duration: 0.008533
+      duration: 0.0165
       messages: 
       output: 
       stacktrace: 
@@ -538,7 +556,62 @@ MonoBehaviour:
       name: T12UpdateHourHand_ReturnsFalseOpenHours
       fullName: Game.Core.Tests.ClockTests.T12UpdateHourHand_ReturnsFalseOpenHours
       resultStatus: 1
-      duration: 0.008015
+      duration: 0.008444
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.MarketDemandTests][suite]'
+      name: MarketDemandTests
+      fullName: Game.Core.Tests.MarketDemandTests
+      resultStatus: 1
+      duration: 0.044161
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.MarketDemandTests.T01aGetMarketDemandQuantityPerHour_ReturnCharacterMarketCreatedOnePerson]'
+      name: T01aGetMarketDemandQuantityPerHour_ReturnCharacterMarketCreatedOnePerson
+      fullName: Game.Core.Tests.MarketDemandTests.T01aGetMarketDemandQuantityPerHour_ReturnCharacterMarketCreatedOnePerson
+      resultStatus: 1
+      duration: 0.005873
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.MarketDemandTests.T01bGetMarketDemandQuantityPerHour_ReturnCharacterMarketCreatedTwoPerson]'
+      name: T01bGetMarketDemandQuantityPerHour_ReturnCharacterMarketCreatedTwoPerson
+      fullName: Game.Core.Tests.MarketDemandTests.T01bGetMarketDemandQuantityPerHour_ReturnCharacterMarketCreatedTwoPerson
+      resultStatus: 1
+      duration: 0.004362
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.MarketDemandTests.T02aSetMarketDemandList_]'
+      name: T02aSetMarketDemandList_
+      fullName: Game.Core.Tests.MarketDemandTests.T02aSetMarketDemandList_
+      resultStatus: 1
+      duration: 0.004203
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.ProcessIntegrationTests][suite]'
+      name: ProcessIntegrationTests
+      fullName: Game.Core.Tests.ProcessIntegrationTests
+      resultStatus: 1
+      duration: 0.000156
       messages: 
       output: 
       stacktrace: 
@@ -548,9 +621,9 @@ MonoBehaviour:
     - id: '[Game.Finances][suite]'
       name: Finances
       fullName: Game.Finances
-      resultStatus: 2
-      duration: 0.204937
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.019543
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -559,116 +632,22 @@ MonoBehaviour:
     - id: '[Game.Finances.Test][suite]'
       name: Test
       fullName: Game.Finances.Test
-      resultStatus: 2
-      duration: 0.185844
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests][suite]'
-      name: FinanceCalculatorTests
-      fullName: Game.Finances.Test.FinanceCalculatorTests
-      resultStatus: 2
-      duration: 0.132321
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests.T01FinanceCalculator_GetTotalProductProfit_Returns50]'
-      name: T01FinanceCalculator_GetTotalProductProfit_Returns50
-      fullName: Game.Finances.Test.FinanceCalculatorTests.T01FinanceCalculator_GetTotalProductProfit_Returns50
       resultStatus: 1
-      duration: 0.006051
+      duration: 0.00812
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests.T02FinanceCalculator_GetTotalProductProfit_Returns75]'
-      name: T02FinanceCalculator_GetTotalProductProfit_Returns75
-      fullName: Game.Finances.Test.FinanceCalculatorTests.T02FinanceCalculator_GetTotalProductProfit_Returns75
+    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.OrderCalculatorTests][suite]'
+      name: OrderCalculatorTests
+      fullName: Game.Finances.Test.OrderCalculatorTests
       resultStatus: 1
-      duration: 0.003917
+      duration: 0.000246
       messages: 
       output: 
       stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests.T03FinanceCalculator_GetTotalSalesPerHour_ReturnsFive]'
-      name: T03FinanceCalculator_GetTotalSalesPerHour_ReturnsFive
-      fullName: Game.Finances.Test.FinanceCalculatorTests.T03FinanceCalculator_GetTotalSalesPerHour_ReturnsFive
-      resultStatus: 1
-      duration: 0.005442
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests.T04FinanceCalculator_GetOverheadCostPerHour_ReturnsFive]'
-      name: T04FinanceCalculator_GetOverheadCostPerHour_ReturnsFive
-      fullName: Game.Finances.Test.FinanceCalculatorTests.T04FinanceCalculator_GetOverheadCostPerHour_ReturnsFive
-      resultStatus: 1
-      duration: 0.004403
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests.T05FinanceCalculator_GetGetGrossProfit_Returns240Profit]'
-      name: T05FinanceCalculator_GetGetGrossProfit_Returns240Profit
-      fullName: Game.Finances.Test.FinanceCalculatorTests.T05FinanceCalculator_GetGetGrossProfit_Returns240Profit
-      resultStatus: 1
-      duration: 0.004877
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests.T06FinanceCalculator_GetTotalDemandCreated_Returns10]'
-      name: T06FinanceCalculator_GetTotalDemandCreated_Returns10
-      fullName: Game.Finances.Test.FinanceCalculatorTests.T06FinanceCalculator_GetTotalDemandCreated_Returns10
-      resultStatus: 1
-      duration: 0.004165
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests.T07FinanceCalculator_GetTotalGrossMargin_Returns90]'
-      name: T07FinanceCalculator_GetTotalGrossMargin_Returns90
-      fullName: Game.Finances.Test.FinanceCalculatorTests.T07FinanceCalculator_GetTotalGrossMargin_Returns90
-      resultStatus: 2
-      duration: 0.005733
-      messages: "  Expected: 90\n  But was:  2.0f\n"
-      output: 
-      stacktrace: 'at Game.Finances.Test.FinanceCalculatorTests.T07FinanceCalculator_GetTotalGrossMargin_Returns90
-        () [0x00088] in /Users/fudaviddong/Documents/_GetRich/GetRich/Assets/_Finance/Editor/FinanceCalculatorTests.cs:196
-
-'
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Finances.Test.FinanceCalculatorTests.T08FinanceCalculator_GetTotalGrossMargin_Returns90]'
-      name: T08FinanceCalculator_GetTotalGrossMargin_Returns90
-      fullName: Game.Finances.Test.FinanceCalculatorTests.T08FinanceCalculator_GetTotalGrossMargin_Returns90
-      resultStatus: 2
-      duration: 0.004686
-      messages: "  Expected: 90\n  But was:  2.0f\n"
-      output: 
-      stacktrace: 'at Game.Finances.Test.FinanceCalculatorTests.T08FinanceCalculator_GetTotalGrossMargin_Returns90
-        () [0x00088] in /Users/fudaviddong/Documents/_GetRich/GetRich/Assets/_Finance/Editor/FinanceCalculatorTests.cs:224
-
-'
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -676,24 +655,20 @@ MonoBehaviour:
       name: Assembly-CSharp-Editor-firstpass.dll
       fullName: /Users/fudaviddong/Documents/_GetRich/GetRich/Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll
       resultStatus: 2
-      duration: 0.001313
+      duration: 0.00215
       messages: Has no TestFixtures
       output: 
       stacktrace: 
       notRunnable: 1
       ignoredOrSkipped: 0
       description: 
-    m_ResultText: 'Finances (0.205s)
-
-      ---
-
-      One or more child tests had errors'
+    m_ResultText: ClockTests (0.273s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5d4dbcdb
-      m_LastClickedID: -608416419
-      m_ExpandedIDs: 10afdb8036c3218e90bafab031c037ce5d4dbcdbfadaffdca3d3942170c3482dc9678435ffffff7f
+      m_SelectedIDs: 31c037ce
+      m_LastClickedID: -835207119
+      m_ExpandedIDs: 10afdb8036c3218e9c022c98a487d7a6e268d5a790bafab031c037ce5d4dbcdbfadaffdca3d3942170c3482dc9678435ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -733,10 +708,10 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 254
+    x: 286
     y: 49
-    width: 1198
-    height: 578
+    width: 1330
+    height: 732
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -745,10 +720,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -599
-    m_HBaseRangeMax: 599
-    m_VBaseRangeMin: -280.5
-    m_VBaseRangeMax: 280.5
+    m_HBaseRangeMin: -665
+    m_HBaseRangeMax: 665
+    m_VBaseRangeMin: -357.5
+    m_VBaseRangeMax: 357.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -765,25 +740,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1198
-      height: 561
+      width: 1330
+      height: 715
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 599, y: 280.5}
+    m_Translation: {x: 665, y: 357.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -599
-      y: -280.5
-      width: 1198
-      height: 561
+      x: -665
+      y: -357.5
+      width: 1330
+      height: 715
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1198, y: 578}
+  m_LastWindowPixelSize: {x: 1330, y: 732}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -811,31 +786,32 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 49
-    width: 250
-    height: 578
+    width: 282
+    height: 732
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 685cddff7c62ddff5c6addffae73ddff1e7cddffea93ddff0a9cddffd22ddfff822edfff122fdfffa62fdfff3a33dfff4839dfff743ddfff3e43dfff0e47dfff6e4fdfff0a53dfff5256dfff6659dfffa25cdfff2863dfff4c66dfff4a69dfffe4f4dfff76f5dfff26f6dfff5cf9dfffd2fcdfff0003e0ffb806e0fffc09e0ffa80ce0ffae15e0ff0221e0ff7426e0ffa229e0ff482ce0ffb22fe0ff1e35e0ff1038e0fffc3ae0ffc841e0ffa245e0ff9048e0ff0654e0ff0c57e0ff125ae0ff4c5de0ffac63e0ffe668e0ffa06ce0ff3071e0ffc877e0ff107be0ffda7de0ff1a81e0ffb687e0ff748ae0ff8a8de0ff8290e0ff9e93e0ffd896e0ff7c9be0ff0e9ee0fff0a0e0ff30c3e0ff96c6e0ffd2cae0ff005ae4ff5c5be4ff6c5ce4ffa45fe4ffa863e4ff3a67e4ff9c74e4ff0678e4ffb87be4ff5683e4ffde86e4ff228ae4ff8e8de4ff9090e4ffb899e4ff529ee4ff54a2e4ff90a5e4ff16b0e4ffe0b9e4ffb8bde4ffa2d4e4ff34d5e4ffe0d8e4ffc6dbe4ffcadee4ff44e2e4ffb6e6e4ff0cebe4ff7e01e5ff0c02e5ffbc02e5ff4a06e5ff70c5e5ff68c6e5ff32cae5ffaefee7ffccfee7ff1601e8ff1e02e8ffe007e8ff6c0de8ffea12e8ff8e18e8ff2e20e8ff1a26e8ff942be8ff0e36e8ff0e3de8ffb442e8fff84be8ff2852e8ffac57e8ffb85fe8ff8266e8ff4867e8ffb26ce8ff9e72e8ff227be8fff238eaffe839eaff76deeaff6ce3eaffcee6ebff9231eeff66e3f1ffd03cf4ffb2b8f4ffcebcf4ff3ce8f4ff6a13f5fff44ff5ff4ac1f5ff7660f6ff2497f6ff34f4f6ff40f4f6ff04f5f6ff1803f7fff403f7ff1c9cf7ff96b3f8ff4259f9ffd0b0faffb6b1faffc2f7faffec6bfcfff8a5fdff00a6fdff18a6fdffc4a6fdff36a8fdff04aafdfff8acfdff34b1fdff50b3fdffeab4fdffecb7fdff80b9fdff94bbfdff2ebffdffdcc1fdff7cc3fdff50c5fdff92cafdff64ccfdff36cefdff50d4fdffe0d5fdffc4d7fdff74d9fdff28dbfdffe4dffdff3efdfdffe4fdfdff72fffdff0e01feff1203feff1007feff2809feff0217feff9417feff0219fefffe1cfeffa01efeff0022feffa622feff2024feff6628fefff629feff4e2cfeffd42dfeff5c2ffeffee30feff6032feffc233feff5635feffc036feff3238feff003cfeff983dfeff2e3ffeffc840feffd442feff7844feffa649feff324bfeff344dfeffa44efeff3250feff8a53feff8c55feff5e57feff0a59feff845cfeff2a5efeff2c60feffc461feff7265feffd066feffd468feff2a6cfeff786efeffd873feff3a75feffae76feff3e78feff9e7bfeff0c7dfeff747efeff7a80feff0684fefff885feff0088feffee8afeff9e8cfeff188efeff5692feff3a99feffb69afeff269efeff029ffeffc09ffeffe6a0feffbea1feff08a3feff72a4feff9aa5feff0aa7feffe4a8feff06adfeff8caefeff2cb0feffacb1feff06b3feff90b4feff1ab6feff9eb7feff1cb9feffbabafeffe0bdfeff6abffefff4c0feff7ec2fefffec3feff90c5feff00c7feff60c8feff34cafeffe8d2feff8cd4feff64d6feff68d8feffa2dbfeffeedcfeff26dffeffa4e0feff56e4feffe220ffffee20ffff8821ffff3e23ffff6e83ffff2e84ffffd085ffff9289ffff8c8dffffde8effffb890ffff2e96ffff6697ffffe098ffff249affffda9bffff00a7ffff66a7fffffaa8ffff5caaffffe8adffff3ab0ffff1ab5ffff1afcffff000000000c2a00005837000072370000a03700003c5000005450000070500000dc0b01007e170100
+    scrollPos: {x: 0, y: 309}
+    m_SelectedIDs: 4c20e2ff4a20e2ff4820e2ff4620e2ff
+    m_LastClickedID: -1957818
+    m_ExpandedIDs: 4420e2ffc24be2ff3458e4ffb48be4ffd8a1e4fff8a5e4ffdea7e4ff28c2e4fffa18e5ff4eaae5ff28abe5ffda17e6ff3461e6ff14b9e6ffc6d6e6ff8015e7ff3228e7ff1c37e7ffb43ae7ff5e7de8ff3027eaffd637eaff50daebffaa46ecffd471ecff3280ecfff4e9ecff24eaecff9eebecff66ececff4eedecffa012f1ffee13f1ff2a14f1ff7015f1ffca27f1ffbc32f1ffbe3af1ff5045f1fff24af1ff0e50f1ff2855f1ff4c5ef1ffb863f1ffcc94f1ffdea1f1ff24a7f1fffcaef1ff00b7f1ffa0bcf1ffc8c1f1ff3ccef1ff80a5f2ff6ca6f2ff74acf2ffec7ef6ffc27ff6ff0c85f6fff48af6ffda92f6ff2298f6ff729df6ff16a6f6ff82abf6ff4ab7f6ff00bdf6ff1ac7f6ff4ed2f6ff94d7f6ffe0dcf6ff42e9f6ff42eef6ff00f4f6ff0afdf6ff5802f7ff000ef7ff5a13f7ff0224f7ff982bf7ff0431f7ff6661f7fff062f7ffd863f7ff746ff7ffc6edf7ff7eeef7fffaf3f7fff0f7f7ff52fcf7ff8801f8ff3a07f8ffb411f8ffbe15f8ff021bf8ff3c20f8ffd227f8ff822cf8ff4e3ef8ff6644f8ff7a49f8ff9c4ef8ff6056f8ff585cf8ffce61f8ff6867f8ffa06ff8ffd879f8ffc284f8ff928af8ffe693f8ffc498f8ff6c9ef8ff9658f9ff205af9fff45af9fff261f9ff4468f9ffa074f9ff047af9ff327ef9ffba82f9ffe487f9ff028df9ff2492f9fff896f9ff8ca0f9ffcea9f9ffbaaff9ff5ab5f9ffeabaf9ffc0bff9fffcc4f9ff7accf9ff56d1f9ff4edbf9ff92e0f9ff0c2dfaff962efaff6a2ffaff4e51faff3e52faff5ae0faff6ce0faff32e1faff6eecfaffe0f2faff44fbfaff6404fbffd008fbffc60dfbff2812fbff9016fbff041bfbffb024fbffbe29fbff662efbff4e33fbff663afbff143ffbffb643fbffd648fbfff04ffbff345ffbff3664fbff906bfbffa270fbff9279fbff8a7efbfff689fbffd88efbffd095fbff9699fbffd29dfbff30a2fbffcca6fbff72abfbff16b0fbffc0b4fbff66b9fbff2cbefbffe8c2fbffd6ccfbffe4d1fbffacd6fbff9eddfbff4ae2fbffeee6fbfff4ecfbffaef1fbff0af7fbff96fefbfffa02fcff2e08fcff9811fcff3a16fcff701bfcff1820fcff102afcffbc2efcff7e38fcffea3dfcff8e43fcff9a48fcff304dfcff5e51fcffa255fcff4e5afcffd861fcff7c67fcff866cfcff0c71fcff7a75fcffea79fcffbc82fcff768dfcff2892fcfff896fcffe89bfcff0ca0fcff64a4fcff24a9fcffeaadfcffb2b2fcff58befcffdcc2fcff3cc9fcff12cefcfffcd4fcff96d9fcff5edefcffe4e2fcffeae7fcff3cecfcff3af2fcfffcf6fcffe017fdffee4efeff7a8cfeff548dfeff5492feff9a9efeff2ea8feff58adfeff24b2feffecb6feff32befeffc4c2fefff0c7feff92ccfeff18d6fefff4dafeff0ee0feff98f5feffe6fafeffe2fffeff7a05ffffb00affffa40fffff0017ffff321cffff5e21ffff602bffff0230ffff3a35fffff641ffff9246fffff24bffff5654ffff025cffff1a65ffff3871ffff367cffff0481ffff4485ffff9c8affff4e92ffff7a97ffff3a9cffff9ea6ffff5aabffff9ab0ffffdab5ffff94bdffffcec3ffff4ec8ffff1acdffffe0d1ffffded6ffffd0dcffff82f4ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: SalesPerson(Clone)
-      m_OriginalName: SalesPerson(Clone)
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -2023376
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
-  m_ExpandedScenes: []
+  m_ExpandedScenes:
+  - Sandbox
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -861,19 +837,19 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 254
+    x: 286
     y: 49
-    width: 1198
-    height: 578
+    width: 1330
+    height: 732
   m_SceneLighting: 1
-  lastFramingTime: 181746.2285001278
+  lastFramingTime: 214124.76804602146
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 17.981062, y: -0.122493744, z: 13.738268}
+    m_Target: {x: 9.996094, y: 4.1914062, z: 3.9726562}
     speed: 2
-    m_Value: {x: 17.981062, y: -0.122493744, z: 13.738268}
+    m_Value: {x: 9.996094, y: 4.1914062, z: 3.9726562}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -896,20 +872,19 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.40445325, y: -0.008230814, z: 0.0036400426, w: 0.9145144}
+    m_Target: {x: 0.4659472, y: -0.1934376, z: 0.10517422, w: 0.85698056}
     speed: 2
-    m_Value: {x: 0.40445325, y: -0.008230814, z: 0.0036400426, w: 0.9145144}
+    m_Value: {x: 0.4659467, y: -0.1934374, z: 0.10517411, w: 0.85697967}
   m_Size:
-    m_Target: 83.407776
+    m_Target: 33.641155
     speed: 2
-    m_Value: 83.407776
+    m_Value: 33.641155
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
-  m_LastSceneViewRotation: {x: 0.6090786, y: 0.00000009586904, z: -0.00000014651383,
-    w: 0.79310995}
-  m_LastSceneViewOrtho: 1
+    m_Value: 1
+  m_LastSceneViewRotation: {x: 0.43482682, y: -0.059360333, z: 0.028740244, w: 0.8980957}
+  m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
@@ -963,9 +938,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 491
+    y: 808
     width: 1641
-    height: 567
+    height: 250
   m_ViewPositions:
     m_KeySerializationHelper:
     - {fileID: 110700000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
@@ -1007,9 +982,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 648
-    width: 1452
-    height: 410
+    y: 802
+    width: 1616
+    height: 256
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -1022,19 +997,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Core
+    - Assets/_Environment/BuildingBlocks
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/_Core
+  - Assets/_Environment/BuildingBlocks
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/fudaviddong/Documents/_GetRich/GetRich
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f6250000
-    m_LastClickedID: 9718
-    m_ExpandedIDs: 00000000f025000092620000c26200009c8e000000ca9a3bffffff7f
+    m_SelectedIDs: 78140100
+    m_LastClickedID: 70776
+    m_ExpandedIDs: 00000000b4260000fa2600007e270000b6270000ca27000024280000a4280000c0280000ca2800006cb9010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1062,7 +1037,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f0250000
+    m_ExpandedIDs: 00000000b4260000fa2600007e270000a4280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1087,8 +1062,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f42b0000
-    m_LastClickedInstanceID: 11252
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000964100006c410000e835000076520000125200006a4b000074480000b0370000dea8ffffea410000c892fdffa2570000843b0000284e0000
     m_RenameOverlay:
@@ -1106,7 +1081,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1141,7 +1116,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 808
-    width: 1373
+    width: 1641
     height: 250
 --- !u!114 &20
 MonoBehaviour:
@@ -1165,9 +1140,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1647
+    x: 1620
     y: 49
-    width: 273
+    width: 300
     height: 1009
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
@@ -1198,9 +1173,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1647
+    x: 1620
     y: 49
-    width: 273
+    width: 300
     height: 1009
 --- !u!114 &22
 MonoBehaviour:
@@ -1224,7 +1199,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1449
+    x: 1620
     y: 49
-    width: 471
+    width: 300
     height: 1009
