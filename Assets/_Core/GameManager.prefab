@@ -56,6 +56,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7752c8804b04a6dae043805c7c2c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _demandCreatedPerHour:
+  - 0
+  _demandConvertedPerHour:
+  - 0
 --- !u!114 &114110432182379970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hour: 0
   _minute: 0
-  _minutesPassedPerSecond: 10
+  _minutesPassedPerSecond: 15
   _startHour: 8
   _endHour: 17
 --- !u!114 &114217748489864648

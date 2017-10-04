@@ -51,22 +51,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Core\BusinessLogicSystem.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\CharacterParent.cs" />
      <Compile Include="Assets\_Core\Clock.cs" />
      <Compile Include="Assets\_Core\ClockFake.cs" />
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
-     <Compile Include="Assets\_Core\GameManager.cs" />
      <Compile Include="Assets\_Core\HomePoint.cs" />
      <Compile Include="Assets\_Core\ItemParent.cs" />
+     <Compile Include="Assets\_Core\MarketDemand.cs" />
      <Compile Include="Assets\_Core\Order.cs" />
      <Compile Include="Assets\_Core\OrdersParent.cs" />
      <Compile Include="Assets\_Core\Tags.cs" />
      <Compile Include="Assets\_Core\Time.cs" />
      <Compile Include="Assets\_Finance\FinanceSystem.cs" />
-     <Compile Include="Assets\_Finance\OrderCalculator.cs" />
-     <Compile Include="Assets\_Finance\OrderCalculatorArgs.cs" />
      <Compile Include="Assets\_Objects\_Characters\Character.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterConfig.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterMovement.cs" />

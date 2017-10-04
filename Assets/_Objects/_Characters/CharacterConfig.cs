@@ -8,18 +8,18 @@ namespace Game.Objects.Characters{
     public class CharacterConfig : ObjectConfig
     {
 		[HeaderAttribute("Character Specific")]
-		[SerializeField] int _productSalesPerHour = 0;
-		[SerializeField] int _productDemandCreatedPerHour = 0;
+		[SerializeField] int _demandConvertedPerHour = 0;
+		[SerializeField] int _demandCreatedPerHour = 0;
 		[SerializeField] int _ordersEnteredPerHour = 0;
 
 		public int GetProductSalesPerHour()
 		{
-			return _productSalesPerHour;
+			return _demandConvertedPerHour;
 		}
 
 		public int GetProductDemandCreatedPerHour()
 		{
-			return _productDemandCreatedPerHour;
+			return _demandCreatedPerHour;
 		}
 
 		public int GetOrdersEnteredPerHour()

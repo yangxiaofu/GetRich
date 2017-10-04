@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Product
   m_EditorClassIdentifier: 
   _productName: NewProductInvention
-  _pricePerUnit: 60
-  _costPerUnit: 30
+  _pricePerUnit: 10
+  _costPerUnit: 5

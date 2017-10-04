@@ -18,6 +18,11 @@ namespace Game.Finances{
 		{
 			_cash += cash;
 		}
+
+		public void UseCash(float cash)
+		{
+			_cash -= cash;
+		}
 		
 		public void OnObjectDropped(ObjectConfig objectConfig)
 		{

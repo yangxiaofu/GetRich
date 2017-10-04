@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Core\Editor\ClockTests.cs" />
-     <Compile Include="Assets\_Finance\Editor\FinanceCalculatorTests.cs" />
+     <Compile Include="Assets\_Core\Editor\MarketDemandTests.cs" />
+     <Compile Include="Assets\_Core\Editor\ProcessIntegrationTests.cs" />
+     <Compile Include="Assets\_Finance\Editor\OrderCalculatorTests.cs" />
      <Compile Include="Assets\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
      <Compile Include="Assets\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
      <Compile Include="Assets\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
