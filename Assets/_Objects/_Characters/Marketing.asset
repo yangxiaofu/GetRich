@@ -17,5 +17,5 @@ MonoBehaviour:
   _initialCost: 0
   _costPerHour: 30
   _demandConvertedPerHour: 0
-  _demandCreatedPerHour: 5
+  _demandCreatedPerHour: 50
   _ordersEnteredPerHour: 0

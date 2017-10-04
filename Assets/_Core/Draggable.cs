@@ -15,6 +15,7 @@ namespace Game.Core{
         CameraRaycaster _cameraRaycaster;
 		const string CHARACTER = "CHARACTER";
 		const string ITEM = "ITEM";
+        const string FILING_CABINET = "Filing Cabinet";
         ObjectConfig _objectConfig;
         FinanceSystem _financeSystem;
 
@@ -52,7 +53,9 @@ namespace Game.Core{
 
         private void UpdateItemPosition()
         {
-            this.transform.position = _cameraRaycaster.GetMousePositionOnGround();
+            var groundPosition = _cameraRaycaster.GetMousePositionOnGround();
+            var snappedPos = new Vector3(Mathf.RoundToInt(groundPosition.x), Mathf.RoundToInt(groundPosition.y), Mathf.RoundToInt(groundPosition.z));
+            this.transform.position = snappedPos;
         }
 
         private void ScanForDropInput()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Desk
   m_EditorClassIdentifier: 
   _objectName: Desk
-  _objectPrefab: {fileID: 1663912339225188, guid: 23f9efca50ab749a5a456a32ab9d3de8,
+  _objectPrefab: {fileID: 1829242710414254, guid: 2120d6c302a2a498f83f13ab36e0d55e,
     type: 2}
   _initialCost: 500
   _costPerHour: 0

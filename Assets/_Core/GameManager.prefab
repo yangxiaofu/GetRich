@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4118562269518324}
-  - component: {fileID: 114060874501593426}
-  - component: {fileID: 114774109411479662}
+  - component: {fileID: 114608459098588926}
   - component: {fileID: 114262349677249796}
   - component: {fileID: 114424139804824590}
   - component: {fileID: 114217748489864648}
+  - component: {fileID: 114774109411479662}
   - component: {fileID: 114110432182379970}
   m_Layer: 0
   m_Name: GameManager
@@ -45,21 +45,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114060874501593426
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121473559738406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7752c8804b04a6dae043805c7c2c23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _demandCreatedPerHour:
-  - 0
-  _demandConvertedPerHour:
-  - 0
 --- !u!114 &114110432182379970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +99,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _products:
   - {fileID: 11400000, guid: ec7286dc5040d40e1b6ef618791aaf06, type: 2}
+--- !u!114 &114608459098588926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121473559738406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed8ee5890aff4ff4a8635b4b943d501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _marketDemandCreatedByHour: []
+  _marketDemandCreatedAcummulated: []
+  _marketDemandClosedByHour: []
+  _personnelCostsByHour: []
+  _profitPerHour: []
 --- !u!114 &114774109411479662
 MonoBehaviour:
   m_ObjectHideFlags: 1
