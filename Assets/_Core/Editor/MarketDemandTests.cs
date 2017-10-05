@@ -21,8 +21,9 @@ namespace Game.Core.Tests{
 			characters.Add(characterStub);
 
 			var productStub = new ProductConfigStub(0, 0);
-			
-			var marketDemand = new MarketDemand(productStub, characters);
+			var bs = new BusinessStatisticsStub();
+
+			var marketDemand = new MarketDemand(productStub, characters, bs);
 			var result = marketDemand.GetMarketDemandQuantityPerHour();
 
 			Assert.AreEqual(characterMarketDemandCreation, result);
@@ -41,8 +42,10 @@ namespace Game.Core.Tests{
 			characters.Add(characterStub);
 
 			var productStub = new ProductConfigStub(0, 0);
-			
-			var marketDemand = new MarketDemand(productStub, characters);
+
+			var bs = BusinessStatistics.CreateInstance("Test") as BusinessStatistics;
+
+			var marketDemand = new MarketDemand(productStub, characters, bs);
 			var result = marketDemand.GetMarketDemandQuantityPerHour();
 
 			Assert.AreEqual(characterMarketDemandCreation * 2, result);

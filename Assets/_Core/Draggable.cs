@@ -15,7 +15,6 @@ namespace Game.Core{
         CameraRaycaster _cameraRaycaster;
 		const string CHARACTER = "CHARACTER";
 		const string ITEM = "ITEM";
-        const string FILING_CABINET = "Filing Cabinet";
         ObjectConfig _objectConfig;
         FinanceSystem _financeSystem;
 

@@ -110,11 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed8ee5890aff4ff4a8635b4b943d501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _marketDemandCreatedByHour: []
-  _marketDemandCreatedAcummulated: []
-  _marketDemandClosedByHour: []
-  _personnelCostsByHour: []
-  _profitPerHour: []
+  _businessStatistics: {fileID: 11400000, guid: 4944edc85e09a4968b2b213393779814,
+    type: 2}
 --- !u!114 &114774109411479662
 MonoBehaviour:
   m_ObjectHideFlags: 1

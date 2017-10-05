@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Core\BusinessLogicSystem.cs" />
+     <Compile Include="Assets\_Core\BusinessStatistics.cs" />
+     <Compile Include="Assets\_Core\BusinessStatisticsArgs.cs" />
+     <Compile Include="Assets\_Core\BusinessStatisticsStub.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\CharacterParent.cs" />
      <Compile Include="Assets\_Core\Clock.cs" />
@@ -59,10 +62,13 @@
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
      <Compile Include="Assets\_Core\HomePoint.cs" />
+     <Compile Include="Assets\_Core\IBusinessStatistics.cs" />
      <Compile Include="Assets\_Core\ItemParent.cs" />
      <Compile Include="Assets\_Core\MarketDemand.cs" />
+     <Compile Include="Assets\_Core\NavMeshBaker.cs" />
      <Compile Include="Assets\_Core\Order.cs" />
      <Compile Include="Assets\_Core\OrdersParent.cs" />
+     <Compile Include="Assets\_Core\SelectionBase.cs" />
      <Compile Include="Assets\_Core\Tags.cs" />
      <Compile Include="Assets\_Core\Time.cs" />
      <Compile Include="Assets\_Finance\FinanceSystem.cs" />
