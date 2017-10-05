@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Core\_BusinessStatistics\Editor\BusinessStatisticsTests.cs" />
      <Compile Include="Assets\_Core\Editor\ClockTests.cs" />
      <Compile Include="Assets\_Core\Editor\MarketDemandTests.cs" />
      <Compile Include="Assets\_Core\Editor\ProcessIntegrationTests.cs" />

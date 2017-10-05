@@ -16,7 +16,7 @@ namespace Game.Core{
 		const string CHARACTER = "CHARACTER";
 		const string ITEM = "ITEM";
         ObjectConfig _objectConfig;
-        FinanceSystem _financeSystem;
+        FinanceSystemBehaviour _financeSystem;
 
         public delegate void ObjectDropped(ObjectConfig objectConfig);
         public event ObjectDropped OnObjectDropped;
@@ -26,7 +26,7 @@ namespace Game.Core{
             _cameraRaycaster = FindObjectOfType<CameraRaycaster>();
             Assert.IsNotNull(_cameraRaycaster);
 
-            _financeSystem = FindObjectOfType<FinanceSystem>();
+            _financeSystem = FindObjectOfType<FinanceSystemBehaviour>();
             OnObjectDropped += _financeSystem.OnObjectDropped;
         }
 

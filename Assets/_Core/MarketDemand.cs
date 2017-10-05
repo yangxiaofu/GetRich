@@ -13,11 +13,11 @@ namespace Game.Core{
 		private readonly List<ICharacter> _characters;
 		private readonly IBusinessStatistics _bs;
 		
-		public MarketDemand(IProductConfig productConfig, List<ICharacter> characters, IBusinessStatistics bs)
+		public MarketDemand(BusinessStatisticsArgs args)
 		{
-			_productConfig = productConfig;
-			_characters = characters;
-			_bs = bs;
+			_productConfig = args.products[0];
+			_characters = args.characters;
+			_bs = args.businessStatistics;
 		}
 
 		public float GetMarketDemandQuantityPerHour()

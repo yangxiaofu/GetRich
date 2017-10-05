@@ -10,12 +10,21 @@ namespace Game.Core{
 		public List<float> personnelCostsByHour = new List<float>();
 		public List<float> profitPerHour = new List<float>();
 
+        public BusinessStatisticsStub()
+        {
+            marketDemandClosedByHour.Add(0);
+            marketDemandCreatedAcummulated.Add(0);
+            marketDemandClosedByHour.Add(0);
+            personnelCostsByHour.Add(0);
+            profitPerHour.Add(0);
+        }
+
         public List<float> GetMarketDemandCreatedByHour()
         {
             return marketDemandCreatedByHour;
         }
 
-        public List<float> GetMarketDemandClosedByHour()
+        public List<float> GetMarketDemandConvertedByHour()
         {
             return marketDemandClosedByHour;
         }

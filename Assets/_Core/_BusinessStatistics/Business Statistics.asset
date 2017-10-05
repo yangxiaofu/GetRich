@@ -11,8 +11,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919c78551758a4452be2e6334286ed42, type: 3}
   m_Name: Business Statistics
   m_EditorClassIdentifier: 
-  marketDemandCreatedByHour: []
-  marketDemandCreatedAcummulated: []
-  marketDemandClosedByHour: []
-  personnelCostsByHour: []
-  profitPerHour: []
+  marketDemandCreatedByHour:
+  - 0
+  - 1
+  - 1
+  - 1
+  marketDemandCreatedAcummulated:
+  - 0
+  - 1
+  - 1
+  - 1
+  marketDemandClosedByHour:
+  - 0
+  - 0
+  - 1
+  - 1
+  personnelCostsByHour:
+  - 0
+  - 50
+  - 50
+  - 50
+  profitPerHour:
+  - 0
+  - 5
+  - 5

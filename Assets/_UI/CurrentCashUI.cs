@@ -7,12 +7,12 @@ using Game.Finances;
 
 namespace Game.UI{
 	public class CurrentCashUI : MonoBehaviour {
-		FinanceSystem _financeSystem;
+		FinanceSystemBehaviour _financeSystem;
 		
 		// Use this for initialization
 		void Start () 
 		{
-			_financeSystem = FindObjectOfType<FinanceSystem>();
+			_financeSystem = FindObjectOfType<FinanceSystemBehaviour>();
 			Assert.IsNotNull(_financeSystem);
 		}
 		

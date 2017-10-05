@@ -6,7 +6,7 @@ namespace Game.Core{
 	public interface IBusinessStatistics{
 		List<float> GetMarketDemandCreatedByHour();
 		List<float> GetMarketDemandCreatedAccumulated();
-		List<float> GetMarketDemandClosedByHour();
+		List<float> GetMarketDemandConvertedByHour();
 		List<float> GetPersonnelCostsByHour();
 		List<float> GetProfitPerHour();
 	}

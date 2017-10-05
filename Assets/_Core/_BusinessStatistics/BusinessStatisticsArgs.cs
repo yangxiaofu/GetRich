@@ -7,13 +7,12 @@ using Game.Finances;
 
 namespace Game.Core{
 	public class BusinessStatisticsArgs {
-		[SerializeField] public List<ProductConfig> products;
+		[SerializeField] public List<IProductConfig> products;
 		public List<ICharacter> characters;
-		public BusinessStatistics businessStatistics;
+		public IBusinessStatistics businessStatistics;
 		public float ordersClosed;
-
-		public FinanceSystem financeSystem;
-		public BusinessStatisticsArgs(List<ICharacter> characters, List<ProductConfig> products, BusinessStatistics businessStatistics, FinanceSystem financeSystem){
+		public IFinanceSystem financeSystem;
+		public BusinessStatisticsArgs(List<ICharacter> characters, List<IProductConfig> products, IBusinessStatistics businessStatistics, IFinanceSystem financeSystem){
 			this.characters = characters;
 			this.products = products;
 			this.businessStatistics = businessStatistics;

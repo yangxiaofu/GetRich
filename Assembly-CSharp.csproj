@@ -51,10 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Core\BusinessLogicSystem.cs" />
-     <Compile Include="Assets\_Core\BusinessStatistics.cs" />
-     <Compile Include="Assets\_Core\BusinessStatisticsArgs.cs" />
-     <Compile Include="Assets\_Core\BusinessStatisticsStub.cs" />
+     <Compile Include="Assets\_Core\_BusinessStatistics\BusinessLogicSystem.cs" />
+     <Compile Include="Assets\_Core\_BusinessStatistics\BusinessStatistics.cs" />
+     <Compile Include="Assets\_Core\_BusinessStatistics\BusinessStatisticsArgs.cs" />
+     <Compile Include="Assets\_Core\_BusinessStatistics\BusinessStatisticsFilter.cs" />
+     <Compile Include="Assets\_Core\_BusinessStatistics\BusinessStatisticsProcessor.cs" />
+     <Compile Include="Assets\_Core\_BusinessStatistics\BusinessStatisticsStub.cs" />
+     <Compile Include="Assets\_Core\_BusinessStatistics\IBusinessStatistics.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\CharacterParent.cs" />
      <Compile Include="Assets\_Core\Clock.cs" />
@@ -62,7 +65,6 @@
      <Compile Include="Assets\_Core\DayManager.cs" />
      <Compile Include="Assets\_Core\Draggable.cs" />
      <Compile Include="Assets\_Core\HomePoint.cs" />
-     <Compile Include="Assets\_Core\IBusinessStatistics.cs" />
      <Compile Include="Assets\_Core\ItemParent.cs" />
      <Compile Include="Assets\_Core\MarketDemand.cs" />
      <Compile Include="Assets\_Core\NavMeshBaker.cs" />
@@ -71,7 +73,9 @@
      <Compile Include="Assets\_Core\SelectionBase.cs" />
      <Compile Include="Assets\_Core\Tags.cs" />
      <Compile Include="Assets\_Core\Time.cs" />
-     <Compile Include="Assets\_Finance\FinanceSystem.cs" />
+     <Compile Include="Assets\_Finance\FinanceSystemBehaviour.cs" />
+     <Compile Include="Assets\_Finance\FinanceSystemStub.cs" />
+     <Compile Include="Assets\_Finance\IFinanceSystem.cs" />
      <Compile Include="Assets\_Objects\_Characters\Character.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterConfig.cs" />
      <Compile Include="Assets\_Objects\_Characters\CharacterMovement.cs" />

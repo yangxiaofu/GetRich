@@ -70,7 +70,6 @@ namespace Game.Objects.Characters{
 
 	public interface ICharacter{
 		float GetCostPerHour();
-		float GetOpportunitiesClosedPerHour();
 		float GetProductDemandCreatedPerHour();
 		float GetOrderEnterMaxPerHour();
 	}

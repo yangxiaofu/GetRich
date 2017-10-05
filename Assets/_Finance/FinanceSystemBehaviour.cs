@@ -10,7 +10,7 @@ using Game.Objects.Products;
 using Game.Objects.Characters;
 
 namespace Game.Finances{
-	public class FinanceSystem : MonoBehaviour {
+	public class FinanceSystemBehaviour : MonoBehaviour, IFinanceSystem{
 		[SerializeField] float _cash = 10000;
 		public float GetCurrentCash(){return _cash;}
 
