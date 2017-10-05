@@ -14,7 +14,7 @@ namespace Game.Core{
             {
                 //Adds to the existing market demand section.
                 var marketDemand = new MarketDemand(args);
-                args.businessStatistics.GetMarketDemandCreatedByHour().Add(marketDemand.GetMarketDemandQuantityPerHour());		    
+                args.businessStatistics.GetMarketDemandCreatedByHour().Add(marketDemand.GetMarketDemandQuantityPerHour());
                 var lastValue = args.businessStatistics.GetMarketDemandCreatedAccumulated()[args.businessStatistics.GetMarketDemandCreatedAccumulated().Count - 1];
 			    var total = lastValue + marketDemand.GetMarketDemandQuantityPerHour();
 			    args.businessStatistics.GetMarketDemandCreatedAccumulated().Add(total);
@@ -24,7 +24,8 @@ namespace Game.Core{
         public void UpdateClosedOrders(BusinessStatisticsArgs args)
         {
             float totalOpportunitiesClosedPotential = GetTotalPotentialOpporutinitiesClosed(args.characters);
-            var totalDemand = args.businessStatistics.GetMarketDemandCreatedAccumulated()[args.businessStatistics.GetMarketDemandCreatedAccumulated().Count - 2];
+            var accumulated = args.businessStatistics.GetMarketDemandCreatedAccumulated();
+            var totalDemand = accumulated[accumulated.Count - 2];
             var ordersClosed = Mathf.Min(totalDemand, totalOpportunitiesClosedPotential);
             args.businessStatistics.GetMarketDemandConvertedByHour().Add(ordersClosed);
             args.ordersClosed = ordersClosed;
@@ -43,8 +44,9 @@ namespace Game.Core{
 
         public void UpdatedAccumulatedOrders(BusinessStatisticsArgs args)
         {
-            var originalMarketDemandAccumulated = args.businessStatistics.GetMarketDemandCreatedAccumulated()[args.businessStatistics.GetMarketDemandCreatedAccumulated().Count - 1];
-            args.businessStatistics.GetMarketDemandCreatedAccumulated()[args.businessStatistics.GetMarketDemandCreatedAccumulated().Count - 1] = originalMarketDemandAccumulated - args.ordersClosed;
+            var accumulated = args.businessStatistics.GetMarketDemandCreatedAccumulated();
+            var originalMarketDemandAccumulated = accumulated[accumulated.Count - 1];
+            accumulated[accumulated.Count - 1] = originalMarketDemandAccumulated - args.ordersClosed;
         }
 
         public void UpdateProductProfit(BusinessStatisticsArgs args)

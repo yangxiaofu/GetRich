@@ -56,20 +56,30 @@ namespace Game.Core{
 
         private void UpdateTasks()
         {
-            //Updates Market Demand.
             var characters = GetCharacters().Cast<ICharacter>().ToList();
             var products = _productSystem.GetProducts();
-            
-            var bsArgs = new BusinessStatisticsArgs(characters, products.Cast<IProductConfig>().ToList(), _businessStatistics, _financeSystem);
+
+            var bsArgs = new BusinessStatisticsArgs(
+                characters,
+                products.Cast<IProductConfig>().ToList(),
+                _businessStatistics,
+                _financeSystem
+            );
 
             var processor = new BusinessStatisticsProcessor(bsArgs);
             var filter = new BusinessStatisticsFilter();
+            var handler = AddBusinessLogicStepsToHandler(filter);
+            processor.Process(handler);
+        }
+
+        private BusinessStatisticsProcessor.BusinessStatisticsHandler AddBusinessLogicStepsToHandler(BusinessStatisticsFilter filter)
+        {
             BusinessStatisticsProcessor.BusinessStatisticsHandler handler = filter.UpdateMarketDemandStatistics;
             handler += filter.UpdateClosedOrders;
             handler += filter.UpdatedAccumulatedOrders;
             handler += filter.UpdateProductProfit;
             handler += filter.UpdatePersonnelCosts;
-            processor.Process(handler);			
+            return handler;
         }
 
         private List<ICharacter> GetCharacters()

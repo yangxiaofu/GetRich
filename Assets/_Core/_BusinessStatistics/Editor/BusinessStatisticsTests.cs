@@ -7,7 +7,7 @@ using Game.Finances;
 using Game.Objects.Characters;
 using Game.Objects.Products;
 
-namespace Game.Core.Test{
+namespace Game.Core.Tests{
 	[TestFixtureAttribute]
 	public class BusinessStatisticsTests{
 
@@ -78,6 +78,7 @@ namespace Game.Core.Test{
 		{
 			float characterMarketDemandCreation = 5f;
 			float characterMarketDemandConverted = 3;
+			float totalMarketDemand = 4;
 
 			var characters = new List<ICharacter>();
 			var characterStubArgs = new CharacterStubArgs(
@@ -94,7 +95,7 @@ namespace Game.Core.Test{
 			products.Add(productStub);
 
 			var bs = new BusinessStatisticsStub();
-			bs.marketDemandCreatedAcummulated = new List<float>(){4, 10};
+			bs.marketDemandCreatedAcummulated = new List<float>(){totalMarketDemand, 10};
 			var fsDummy = new FinanceSystemStub();
 			var bsArgs = new BusinessStatisticsArgs(characters, products, bs, fsDummy);
 
@@ -114,6 +115,7 @@ namespace Game.Core.Test{
 		{
 			float characterMarketDemandCreation = 3f;
 			float characterMarketDemandConverted = 3f;
+			float totalMarketDemand = 20;
 
 			var characters = new List<ICharacter>();
 			var characterStubArgs = new CharacterStubArgs(
@@ -135,7 +137,7 @@ namespace Game.Core.Test{
 			products.Add(productStub);
 
 			var bs = new BusinessStatisticsStub();
-			bs.marketDemandCreatedAcummulated = new List<float>(){20, 10};
+			bs.marketDemandCreatedAcummulated = new List<float>(){totalMarketDemand, 10};
 			var fsDummy = new FinanceSystemStub();
 			var bsArgs = new BusinessStatisticsArgs(characters, products, bs, fsDummy);
 
@@ -155,6 +157,7 @@ namespace Game.Core.Test{
 		{
 			float characterMarketDemandCreation = 3f;
 			float characterMarketDemandConverted = 3f;
+			float totalMarketDemand = 10f;
 
 			var characters = new List<ICharacter>();
 			var characterStubArgs = new CharacterStubArgs(
@@ -176,7 +179,7 @@ namespace Game.Core.Test{
 			products.Add(productStub);
 
 			var bs = new BusinessStatisticsStub();
-			bs.marketDemandCreatedAcummulated = new List<float>(){10, 10};
+			bs.marketDemandCreatedAcummulated = new List<float>(){totalMarketDemand, 10};
 			var fsDummy = new FinanceSystemStub();
 			var bsArgs = new BusinessStatisticsArgs(characters, products, bs, fsDummy);
 
