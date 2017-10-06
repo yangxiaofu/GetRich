@@ -10,34 +10,67 @@ namespace Game.Objects.Characters{
 		[HeaderAttribute("General Character")]
 		[SerializeField] int _dailySalary = 10;
 		[SerializeField] CharacterConfig _config;
-
-		//TODO: Remove after testing complete.
-		[SerializeField] bool _isWorking = true;
-
+        EnergyLevelBehaviour _energy;
 		Clock _clock;
 		CharacterMovement _characterMovement;
 		HomePoint _homePoint;
         Tags _tags;
-    
+
+        public enum CharacterState{
+            Working, Resting, Transition
+        }
+        private CharacterState _state;
+        
+        bool _isWorking = true;
+        public bool isWorking{
+            get{return _isWorking;}
+            set{_isWorking = value;}
+        }
+
+        
+        public void SetState(CharacterState state) {_state = state;}
         void Awake()
         {
-            var energyLevelComponent = gameObject.AddComponent<EnergyLevelBehaviour>();
-            energyLevelComponent.Setup(_config);
+            _energy = gameObject.AddComponent<EnergyLevelBehaviour>();
+            _energy.Setup(_config);
         }
 		void Start()
         {
+            _state = CharacterState.Transition;
             RegisterToNotifiers();
             SetupVariables();
+        }
 
-            _tags = FindObjectOfType<Tags>();
-            Assert.IsNotNull(_tags);
+        void Update(){
 
+            if (_state == CharacterState.Transition){
+                //Walk to the destination. 
+                if (_isWorking){
+                    _characterMovement.MoveToItemWithTag(_tags.DESK);
+                } else {
+                    _characterMovement.MoveToItemWithTag(_tags.RESTORE_ITEM);
+                }
+            } else if (_state == CharacterState.Resting){
+                //Increase the energy level. 
+                _energy.IncreaseEnergy();
+
+            } else if (_state == CharacterState.Working){
+                //Decrease Energy Level. 
+                _energy.DecreaseEnergy();
+                //Set State to Is Working.
+            }
         }
 
         private void SetupVariables()
         {
             _characterMovement = GetComponent<CharacterMovement>();
+            Assert.IsNotNull(_characterMovement);
+
             _homePoint = GameObject.FindObjectOfType<HomePoint>();
+            Assert.IsNotNull(_homePoint);
+
+            _tags = FindObjectOfType<Tags>();
+            Assert.IsNotNull(_tags);
         }
 
         private void RegisterToNotifiers()
@@ -49,13 +82,13 @@ namespace Game.Objects.Characters{
 
         private void OnStartOfDay()
         {
-            _isWorking = true;
-			_characterMovement.FindItemWithTag(_tags.DESK);
+            _state = CharacterState.Transition;
+			_characterMovement.MoveToItemWithTag(_tags.DESK);
         }
 
         private void OnEndOfDay()
         {
-            _isWorking = false;
+            _state = CharacterState.Resting;
 			_characterMovement.SetTarget(_homePoint.transform);
         }
 
@@ -86,12 +119,7 @@ namespace Game.Objects.Characters{
 
         public bool GetIsWorking()
         {
-            return _isWorking;
-        }
-
-        public void SetIsWorking(bool value)
-        {
-            _isWorking = value;
+            return _state == CharacterState.Working;
         }
     }
 

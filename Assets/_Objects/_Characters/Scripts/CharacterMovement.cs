@@ -11,7 +11,6 @@ namespace Game.Objects.Characters{
 		Character _character;
 		AICharacterControl _aiCharacterControl;
 		Tags _tags;
-		bool _foundItem = false;
 		void Start()
 		{
 			_character = GetComponent<Character>();
@@ -19,20 +18,7 @@ namespace Game.Objects.Characters{
 			_tags = FindObjectOfType<Tags>();
 		}
 
-		void Update()
-		{
-			if (_character.GetIsWorking()){
-				FindItemWithTag(_tags.DESK);
-				_foundItem = false;
-			} else {
-				FindItemWithTag(_tags.RESTORE_ITEM);
-				_foundItem = false;
-			}
-		}
-
-		public void FindItemWithTag(string tag){
-			if (_foundItem) return;
-
+		public void MoveToItemWithTag(string tag){
 			var args = new SearchArgs(
 				tag, 
 				GameObject.FindGameObjectsWithTag(tag), 
@@ -45,10 +31,7 @@ namespace Game.Objects.Characters{
 			if (target != null)
 			{
 				SetTarget(target.transform);
-				_foundItem = true;
-			}
-			
-			
+			}	
 		}
 
 		public void SetTarget(Transform destination)

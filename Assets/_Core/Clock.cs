@@ -59,7 +59,6 @@ namespace Game.Core{
         {
             if (minute >= _minutesInAnHour)
 			{
-				Debug.Log(1);
 				_minute = 0;
 				_hour += 1;
 

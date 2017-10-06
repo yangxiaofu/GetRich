@@ -8,6 +8,6 @@ namespace Game.Objects.Characters{
 		float GetProductDemandCreatedPerHour();
 		float GetOrderEnterMaxPerHour();
 		bool GetIsWorking();
-		void SetIsWorking(bool value);
+		void SetState(Character.CharacterState state);
 	}
 }

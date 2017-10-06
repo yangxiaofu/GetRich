@@ -12,6 +12,8 @@ namespace Game.Objects.Characters{
         private readonly float _productDemandCreatedPerHour;
         private readonly float _ordersEnteredPerHour;
         bool _isWorking = false;
+
+        Character.CharacterState _state;
         public void SetIsWorking(bool value){
             _isWorking = value;
         }
@@ -29,7 +31,7 @@ namespace Game.Objects.Characters{
 
         public bool GetIsWorking()
         {
-            return _isWorking;
+            return _state == Character.CharacterState.Working;
         }
 
         public float GetOrderEnterMaxPerHour()
@@ -41,7 +43,10 @@ namespace Game.Objects.Characters{
         {
             return _productDemandCreatedPerHour;
         }
-
+        public void SetState(Character.CharacterState state)
+        {
+            _state = state;
+        }
     }
 
    

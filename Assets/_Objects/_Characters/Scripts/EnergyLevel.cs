@@ -27,40 +27,17 @@ namespace Game.Objects.Characters
 			level = args.level;
 		}
 
- 
+		public void IncreaseEnergy()
+		{
+			level += UnityEngine.Time.deltaTime * energyLevelRestoredPerSecond;
+			level = Mathf.Clamp(level, 0, 100);
+		}
 
-        public void UpdateLevel()
-        {
-			if (_character.GetIsWorking())
-			{
-				level -= UnityEngine.Time.deltaTime * energyLevelConsumedPerSecond;
-				level = Mathf.Clamp(level, 0, 100);
-
-			} else {
-
-				level += UnityEngine.Time.deltaTime * energyLevelRestoredPerSecond;
-				level = Mathf.Clamp(level, 0, 100);
-
-			}
-        }
-
-		public void CheckLevel()
-        {
-            if (_character.GetIsWorking())
-            {
-                if (level <= energyLevelToRest)
-                {
-                    _character.SetIsWorking(false);
-                }
-            }
-            else
-            {
-                if (level == 100)
-                {
-                    _character.SetIsWorking(true);
-                }
-            }
-        }
+		public void DecreaseEnergy()
+		{
+			level -= UnityEngine.Time.deltaTime * energyLevelConsumedPerSecond;
+			level = Mathf.Clamp(level, 0, 100);
+		}
 	}
 }
 
