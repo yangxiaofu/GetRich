@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 namespace Game.Core{
 	public class Tags : MonoBehaviour {
 		public string DESK = "Desk";
+		public string RESTORE_ITEM = "Restore Item";
 	}
 }
 

@@ -7,7 +7,7 @@ TagManager:
   - CHARACTER
   - ITEM
   - Desk
-  - Filing Cabinet
+  - Restore Item
   layers:
   - Default
   - TransparentFX

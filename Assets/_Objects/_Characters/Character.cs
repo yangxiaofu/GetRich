@@ -13,22 +13,52 @@ namespace Game.Objects.Characters{
 
 		//TODO: Remove after testing complete.
 		[SerializeField] bool _isWorking = true;
-		public bool isWorking{get{return _isWorking;}}
+		
 
+		[HeaderAttribute("Energy Levels")]
+		[SerializeField] EnergyLevel _energy;
 		Clock _clock;
 		CharacterMovement _characterMovement;
-
 		HomePoint _homePoint;
 		
 		void Start()
-		{
-			_clock = GameObject.FindObjectOfType<Clock>();
-			_clock.OnEndOfDay += OnEndOfDay;
-			_clock.OnStartOfDay += OnStartOfDay;
+        {
+            SetupEnergyLevel();
+            RegisterToNotifiers();
+            SetupVariables();
+        }
 
-			_characterMovement = GetComponent<CharacterMovement>();
-			_homePoint = GameObject.FindObjectOfType<HomePoint>();
-		}
+        void Update()
+        {
+            _energy.CheckLevel();
+            _energy.UpdateLevel();
+        }
+
+        private void SetupVariables()
+        {
+            _characterMovement = GetComponent<CharacterMovement>();
+            _homePoint = GameObject.FindObjectOfType<HomePoint>();
+        }
+
+        private void SetupEnergyLevel()
+        {
+            var energyLevelArgs = new EnergyLevelArgs(
+                _config.energyLevel,
+                _config.GetEnergyLevelToRest(),
+                _config.GetEnergyLevelConsumedPerSecond(),
+                _config.GetEnergyLevelRestoredPerSecond(),
+                this
+            );
+
+            _energy = new EnergyLevel(energyLevelArgs);
+        }
+
+        private void RegisterToNotifiers()
+        {
+            _clock = GameObject.FindObjectOfType<Clock>();
+            _clock.OnEndOfDay += OnEndOfDay;
+            _clock.OnStartOfDay += OnStartOfDay;
+        }
 
         private void OnStartOfDay()
         {
@@ -44,6 +74,7 @@ namespace Game.Objects.Characters{
 
         public void Setup(CharacterConfig config){
 			_config = config;
+			SetupEnergyLevel();
 		}
 
 		public float GetCostPerHour()
@@ -66,12 +97,18 @@ namespace Game.Objects.Characters{
 			Assert.IsNotNull(_config);
             return _config.GetProductDemandCreatedPerHour();
         }
+
+        public bool GetIsWorking()
+        {
+            return _isWorking;
+        }
+
+        public void SetIsWorking(bool value)
+        {
+            _isWorking = value;
+        }
     }
 
-	public interface ICharacter{
-		float GetCostPerHour();
-		float GetProductDemandCreatedPerHour();
-		float GetOrderEnterMaxPerHour();
-	}
+
 
 }
