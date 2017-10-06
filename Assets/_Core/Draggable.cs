@@ -18,11 +18,17 @@ namespace Game.Core{
         ObjectConfig _objectConfig;
         FinanceSystemBehaviour _financeSystem;
 
+        Tags _tags; 
+
         public delegate void ObjectDropped(ObjectConfig objectConfig);
         public event ObjectDropped OnObjectDropped;
 
         void Start()
         {
+
+            _tags = FindObjectOfType<Tags>();
+            Assert.IsNotNull(_tags, "Tags script is not on a gameobject in the game scene.");
+
             _cameraRaycaster = FindObjectOfType<CameraRaycaster>();
             Assert.IsNotNull(_cameraRaycaster);
 
@@ -72,10 +78,10 @@ namespace Game.Core{
         {
             if (this.gameObject.CompareTag(ITEM))
             {
-                var itemBehaviour = this.gameObject.AddComponent<ItemBehaviour>();
+                var itemBehaviour = this.gameObject.GetComponent<ItemBehaviour>();
                 itemBehaviour.SetupConfig(_objectConfig as ItemConfig);
             } else if (this.gameObject.CompareTag(CHARACTER)){
-                this.gameObject.GetComponent<CharacterMovement>().FindOpenDesk();
+                this.gameObject.GetComponent<CharacterMovement>().FindItemWithTag(_tags.DESK);
                 this.gameObject.GetComponent<Character>().Setup(_objectConfig as CharacterConfig);
             }
         }
@@ -88,7 +94,7 @@ namespace Game.Core{
             }
             else if (itemObject.CompareTag(ITEM))
             {
-                return  FindObjectOfType<ItemParent>().transform;
+                return FindObjectOfType<ItemParent>().transform;
             }
             else
             {

@@ -19,3 +19,7 @@ MonoBehaviour:
   _demandConvertedPerHour: 1
   _demandCreatedPerHour: 1
   _ordersEnteredPerHour: 0
+  _energyLevel: 100
+  _energyLevelConsumedPerSecond: 1
+  _energyLevelRestoredPerSecond: 3
+  _energyLevelToRest: 90

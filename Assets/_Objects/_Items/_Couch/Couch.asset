@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dfb6a046c6845879e63dc154f8d09b, type: 3}
+  m_Name: Couch
+  m_EditorClassIdentifier: 
+  _objectName: Couch
+  _objectPrefab: {fileID: 1546374961111260, guid: effc3a4c3826f42eaa797f42f43680e1,
+    type: 2}
+  _initialCost: 100
+  _costPerHour: 50
+  tag: Restore Item

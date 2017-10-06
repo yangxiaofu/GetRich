@@ -68,8 +68,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4279841540680090}
-  - component: {fileID: 114730039365687740}
   - component: {fileID: 208489359323607772}
+  - component: {fileID: 114730039365687740}
+  - component: {fileID: 114875014825011880}
   m_Layer: 0
   m_Name: Desk
   m_TagString: ITEM
@@ -362,6 +363,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218d7eb9692f446dfa847b4bb82f4b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114875014825011880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1829242710414254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c889ec6783834356bb072b34a736664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inRangeRadius: 2.05
+  _isOccupied: 0
 --- !u!208 &208489359323607772
 NavMeshObstacle:
   m_ObjectHideFlags: 1
