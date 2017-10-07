@@ -15,8 +15,12 @@ namespace Game.Objects.Characters{
 		AICharacterControl _aiCharacterControl;
 		ItemParent _itemParent;
 		Tags _tags;
-		ItemBehaviour _walkTarget;
-		public ItemBehaviour walkTarget{get{return _walkTarget;}}
+		GameObject _walkTarget;
+        public ItemBehaviour GetWalkTargetItemBehaviour()
+        {
+            return _walkTarget.GetComponent<ItemBehaviour>();
+        }
+		public GameObject walkTarget{get{return _walkTarget;}}
 
 		void Start()
 		{
@@ -44,8 +48,8 @@ namespace Game.Objects.Characters{
             if (targetObject)
             {		
                 SetTarget(targetObject.transform);
-                _walkTarget = targetObject.GetComponent<ItemBehaviour>();
-                _walkTarget.isOccupied = true;
+                _walkTarget = targetObject;
+                _walkTarget.GetComponent<ItemBehaviour>().isOccupied = true;
                 _character.continueSearch = false;
             } else {
                 _character.continueSearch = true;
@@ -56,7 +60,7 @@ namespace Game.Objects.Characters{
         {
             if (_walkTarget)
             {
-                _walkTarget.isOccupied = false;
+                _walkTarget.GetComponent<ItemBehaviour>().isOccupied = false;
             }
 
             _walkTarget = null;

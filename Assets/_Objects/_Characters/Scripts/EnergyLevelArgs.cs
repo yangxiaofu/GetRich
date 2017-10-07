@@ -7,15 +7,15 @@ namespace Game.Objects.Characters{
 		public float level;
 		public float energyLevelToRest;
 		public float energyLevelConsumedPerSecond;
-		public float energyLevelRestoredPerSecond;
 		public ICharacter character;
-		public EnergyLevelArgs(float level, float energyLevelToRest, float energyLevelConsumedPerSecond, float energyLevelRestoredPerSecond, ICharacter character)
+		public EnergyLevelBehaviour behaviour;
+		public EnergyLevelArgs(float level, float energyLevelToRest, float energyLevelConsumedPerSecond, ICharacter character, EnergyLevelBehaviour behaviour)
 		{
 			this.level = level;
 			this.energyLevelToRest = energyLevelToRest;
 			this.energyLevelConsumedPerSecond = energyLevelConsumedPerSecond;
-			this.energyLevelRestoredPerSecond = energyLevelRestoredPerSecond;
 			this.character = character;
+			this.behaviour = behaviour;
 		}
 	}
 }

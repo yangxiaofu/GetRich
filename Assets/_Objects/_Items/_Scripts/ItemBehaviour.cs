@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using Game.Objects.Characters;
 using Game.Core;
+using System;
 
 namespace Game.Objects.Items{
 	public class ItemBehaviour : MonoBehaviour {
@@ -37,7 +38,12 @@ namespace Game.Objects.Items{
 			set{_isOccupied = value;}
 		}
 
-		public void SetCharacter(Character character){
+        public float GetEnergyRestoreRatePerSecond()
+        {
+            return _itemConfig.GetEnergyRestoredPerSecond();
+        }
+
+        public void SetCharacter(Character character){
 			_character = character;
 		}
 

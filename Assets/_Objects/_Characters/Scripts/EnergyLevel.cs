@@ -10,9 +10,9 @@ namespace Game.Objects.Characters
 		public float level = 0;
 		public float energyLevelToRest = 50f;
 		public float energyLevelConsumedPerSecond = 0;
-		public float energyLevelRestoredPerSecond = 0;
 		public float maxEnergyLevel = 100f;
 		ICharacter _character;
+		EnergyLevelBehaviour _behaviour;
 
 		public float GetEnergyAsPercentage()
         {
@@ -24,13 +24,14 @@ namespace Game.Objects.Characters
 			_character = args.character;
 			energyLevelToRest = args.energyLevelToRest;
 			energyLevelConsumedPerSecond = args.energyLevelConsumedPerSecond;
-			energyLevelRestoredPerSecond = args.energyLevelRestoredPerSecond;
 			level = args.level;
+			_behaviour = args.behaviour;
 		}
 
 		public void IncreaseEnergy()
 		{
-			level += UnityEngine.Time.deltaTime * energyLevelRestoredPerSecond;
+			var itemBehaviour = _behaviour.gameObject.GetComponent<CharacterMovement>().GetWalkTargetItemBehaviour();
+			level += UnityEngine.Time.deltaTime * itemBehaviour.GetEnergyRestoreRatePerSecond();
 			level = Mathf.Clamp(level, 0, 100);
 		}
 

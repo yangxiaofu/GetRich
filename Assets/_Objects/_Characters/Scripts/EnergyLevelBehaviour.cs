@@ -49,8 +49,8 @@ namespace Game.Objects.Characters{
                 _config.energyLevel,
                 _config.GetEnergyLevelToRest(),
                 _config.GetEnergyLevelConsumedPerSecond(),
-                _config.GetEnergyLevelRestoredPerSecond(),
-                GetComponent<Character>()
+                GetComponent<Character>(), 
+                this
             );
 
             _energy = new EnergyLevel(energyLevelArgs);
