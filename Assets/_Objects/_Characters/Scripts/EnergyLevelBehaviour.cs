@@ -7,14 +7,11 @@ namespace Game.Objects.Characters{
 	public class EnergyLevelBehaviour : MonoBehaviour {
 		[SerializeField] EnergyLevel _energy;
 		public EnergyLevel energy{get{return _energy;}}
+
 		CharacterConfig _config;
 		Character _character;
 		public float GetEnergyAsPercentage() {return _energy.GetEnergyAsPercentage();}
 
-		/// <summary>
-		/// Start is called on the frame when a script is enabled just before
-		/// any of the Update methods is called the first time.
-		/// </summary>
 		void Start()
 		{
 			_character = GetComponent<Character>();
@@ -25,13 +22,14 @@ namespace Game.Objects.Characters{
 			SetupEnergyLevel();
 		}
 
-		public void AdjustEnergyLevel(ItemBehaviour targetItem, float distanceToWalkTarget, Character.CharacterState characterState)
+		public void AdjustEnergyLevel(Character.CharacterState characterState)
 		{
-			if (targetItem)
+            var walkTarget = GetComponent<CharacterMovement>().walkTarget;
+			if (walkTarget)
             { 
-                var distanceFromTarget = Vector3.Distance(this.transform.position, targetItem.transform.position);
+                var distanceFromTarget = Vector3.Distance(this.transform.position, walkTarget.transform.position);
 
-                if (distanceFromTarget < distanceToWalkTarget)
+                if (distanceFromTarget < GetComponent<CharacterMovement>().distanceToWalkTarget)
                 {
                     if (characterState == Character.CharacterState.Working)
                     {

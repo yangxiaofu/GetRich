@@ -10,25 +10,15 @@ namespace Game.Objects.Characters{
 	public class Character : MonoBehaviour, ICharacter {
 		[HeaderAttribute("General Character")]
 		[SerializeField] CharacterConfig _config;
-        [SerializeField] float _distanceToWalkTarget = 2f;
+        [SerializeField] CharacterState _characterState = CharacterState.Resting;
         EnergyLevelBehaviour _energy;
 		Clock _clock;
 		CharacterMovement _characterMovement;
 		HomePoint _homePoint;
         Tags _tags;
         public enum CharacterState{Working, Resting}
-        //Serialization For testing purposes. 
         ItemParent _itemParent;
-        ItemBehaviour _walkTarget;
-        public void SetTarget(ItemBehaviour target){
-            _walkTarget = target;
-        }
-        [SerializeField] CharacterState _state;
-        public void SetCharacterState(CharacterState state)
-        {
-            _state = state;
-        }
-
+        public bool continueSearch = false;
         void Awake()
         {
             _energy = gameObject.AddComponent<EnergyLevelBehaviour>();
@@ -36,38 +26,35 @@ namespace Game.Objects.Characters{
         }
 		void Start()
         {
+            _characterState = CharacterState.Resting;
             RegisterToNotifiers();
             SetupVariables();
         }
         void Update()
         {
             UpdateCharacterState();
-            _energy.AdjustEnergyLevel(_walkTarget, _distanceToWalkTarget, _state);
+            _energy.AdjustEnergyLevel(_characterState);
         }
 
         private void UpdateCharacterState()
         {
             var energy = _energy.energy;
-            if (energy.level == 100 && _state != Character.CharacterState.Working)
+            if (energy.level == energy.maxEnergyLevel && _characterState != Character.CharacterState.Working && !continueSearch)
             {
-                ResetTheWalkTargetObject();
-                _characterMovement.WalkToTargetObjectWithTag(_walkTarget, _tags.DESK, _state);
+                _characterMovement.ResetTheWalkTargetObject();
+                _characterMovement.WalkToTargetObjectWithTag(_tags.DESK, _characterState);
+                _characterState = CharacterState.Working;
             }
-            else if (energy.level < energy.energyLevelToRest && _state != Character.CharacterState.Resting)
+            else if (energy.level < energy.energyLevelToRest && _characterState != Character.CharacterState.Resting && !continueSearch)
             {
-                ResetTheWalkTargetObject();
-                _characterMovement.WalkToTargetObjectWithTag(_walkTarget, _tags.RESTORE_ITEM, _state);
+                _characterMovement.ResetTheWalkTargetObject();
+                _characterMovement.WalkToTargetObjectWithTag(_tags.RESTORE_ITEM, _characterState);
+                _characterState = CharacterState.Resting;
+            } else if (continueSearch) {
+                _characterMovement.ResetTheWalkTargetObject();
+                _characterMovement.WalkToTargetObjectWithTag(_tags.DESK, _characterState);
+                _characterState = CharacterState.Working;
             }
-        }
-
-        private void ResetTheWalkTargetObject()
-        {
-            if (_walkTarget)
-            {
-                _walkTarget.isOccupied = false;
-            }
-
-            _walkTarget = null;
         }
 
         private void SetupVariables()
@@ -92,7 +79,7 @@ namespace Game.Objects.Characters{
         }
         private void OnEndOfDay()
         {
-            _state = CharacterState.Resting;
+            _characterState = CharacterState.Resting;
 			_characterMovement.SetTarget(_homePoint.transform);
         }
 
@@ -114,13 +101,5 @@ namespace Game.Objects.Characters{
 			Assert.IsNotNull(_config);
             return _config.GetProductDemandCreatedPerHour();
         }
-
-        void OnDrawGizmos(){
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(this.transform.position, _distanceToWalkTarget);
-        }
     }
-
-
-
 }

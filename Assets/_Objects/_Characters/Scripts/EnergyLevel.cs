@@ -11,6 +11,7 @@ namespace Game.Objects.Characters
 		public float energyLevelToRest = 50f;
 		public float energyLevelConsumedPerSecond = 0;
 		public float energyLevelRestoredPerSecond = 0;
+		public float maxEnergyLevel = 100f;
 		ICharacter _character;
 
 		public float GetEnergyAsPercentage()

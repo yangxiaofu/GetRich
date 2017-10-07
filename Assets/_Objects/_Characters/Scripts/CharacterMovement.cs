@@ -9,10 +9,15 @@ using UnityEngine.Assertions;
 
 namespace Game.Objects.Characters{
 	public class CharacterMovement : MonoBehaviour {
+		[SerializeField] float _distanceToWalkTarget = 2f;
+		public float distanceToWalkTarget{get{return _distanceToWalkTarget;}}
 		Character _character;
 		AICharacterControl _aiCharacterControl;
 		ItemParent _itemParent;
 		Tags _tags;
+		ItemBehaviour _walkTarget;
+		public ItemBehaviour walkTarget{get{return _walkTarget;}}
+
 		void Start()
 		{
 			_character = GetComponent<Character>();
@@ -30,29 +35,31 @@ namespace Game.Objects.Characters{
 			_aiCharacterControl.SetTarget(destination);
 		}
 
-		public void WalkToTargetObjectWithTag(ItemBehaviour walkTarget, string tag, Character.CharacterState characterState)
+		public void WalkToTargetObjectWithTag(string tag, Character.CharacterState characterState)
         {
-            Assert.IsNull(walkTarget, "You must Reset the target object befor making this call. ");
+            Assert.IsNull(_walkTarget, "You must Reset the target object befor making this call. ");
 
             var targetObject = FindUnOccupiedTargetToWalkTo(tag);
             //Set the target to the work station. 
             if (targetObject)
-            {
-				
+            {		
                 SetTarget(targetObject.transform);
-                walkTarget = targetObject.GetComponent<ItemBehaviour>();
-                walkTarget.isOccupied = true;
-				GetComponent<Character>().SetTarget(walkTarget);
-
-                if (tag == _tags.RESTORE_ITEM)
-                {
-					GetComponent<Character>().SetCharacterState(Character.CharacterState.Resting);
-                }
-                else if (tag == _tags.DESK)
-                {
-                    GetComponent<Character>().SetCharacterState(Character.CharacterState.Working);
-                }
+                _walkTarget = targetObject.GetComponent<ItemBehaviour>();
+                _walkTarget.isOccupied = true;
+                _character.continueSearch = false;
+            } else {
+                _character.continueSearch = true;
             }
+        }
+
+		public void ResetTheWalkTargetObject()
+        {
+            if (_walkTarget)
+            {
+                _walkTarget.isOccupied = false;
+            }
+
+            _walkTarget = null;
         }
 
 		private GameObject FindUnOccupiedTargetToWalkTo(string tag){
@@ -62,6 +69,11 @@ namespace Game.Objects.Characters{
                 }
             }
             return null;
+        }
+
+		void OnDrawGizmos(){
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(this.transform.position, _distanceToWalkTarget);
         }
 	}
 
