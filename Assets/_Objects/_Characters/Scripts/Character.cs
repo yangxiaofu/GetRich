@@ -11,6 +11,7 @@ namespace Game.Objects.Characters{
 		[HeaderAttribute("General Character")]
 		[SerializeField] CharacterConfig _config;
         [SerializeField] CharacterState _characterState = CharacterState.Resting;
+        public bool continueSearch = false;
         EnergyLevelBehaviour _energy;
 		Clock _clock;
 		CharacterMovement _characterMovement;
@@ -18,7 +19,7 @@ namespace Game.Objects.Characters{
         Tags _tags;
         public enum CharacterState{Working, Resting}
         ItemParent _itemParent;
-        public bool continueSearch = false;
+        
         void Awake()
         {
             _energy = gameObject.AddComponent<EnergyLevelBehaviour>();
@@ -39,22 +40,34 @@ namespace Game.Objects.Characters{
         private void UpdateCharacterState()
         {
             var energy = _energy.energy;
-            if (energy.level == energy.maxEnergyLevel && _characterState != Character.CharacterState.Working && !continueSearch)
-            {
-                _characterMovement.ResetTheWalkTargetObject();
-                _characterMovement.WalkToTargetObjectWithTag(_tags.DESK, _characterState);
-                _characterState = CharacterState.Working;
-            }
-            else if (energy.level < energy.energyLevelToRest && _characterState != Character.CharacterState.Resting && !continueSearch)
-            {
-                _characterMovement.ResetTheWalkTargetObject();
-                _characterMovement.WalkToTargetObjectWithTag(_tags.RESTORE_ITEM, _characterState);
-                _characterState = CharacterState.Resting;
+            
+            if (energy.level == energy.maxEnergyLevel && _characterState != Character.CharacterState.Working && !continueSearch) {
+
+                SearchForWorkStation();
+
+            } else if (energy.level < energy.energyLevelToRest && _characterState != Character.CharacterState.Resting && !continueSearch) {
+
+                SearchForRestArea();
+
             } else if (continueSearch) {
-                _characterMovement.ResetTheWalkTargetObject();
-                _characterMovement.WalkToTargetObjectWithTag(_tags.DESK, _characterState);
-                _characterState = CharacterState.Working;
+
+                SearchForWorkStation();
+
             }
+        }
+
+        private void SearchForRestArea()
+        {
+            _characterMovement.ResetTheWalkTargetObject();
+            _characterMovement.WalkToTargetObjectWithTag(_tags.RESTORE_ITEM, _characterState);
+            _characterState = CharacterState.Resting;
+        }
+
+        private void SearchForWorkStation()
+        {
+            _characterMovement.ResetTheWalkTargetObject();
+            _characterMovement.WalkToTargetObjectWithTag(_tags.DESK, _characterState);
+            _characterState = CharacterState.Working;
         }
 
         private void SetupVariables()
