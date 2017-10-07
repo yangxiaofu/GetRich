@@ -6,14 +6,12 @@ using Game.Objects.Characters;
 namespace Game.Core{
 	public struct SearchArgs{
 		public string tag;
-		public GameObject[] gameobjects;
-		public Character character;
+		public Transform gameObjectsParent;
 
-		public SearchArgs(string tag, GameObject[] gameObjects, Character character)
+		public SearchArgs(string tag, Transform gameObjectsParent)
 		{
 			this.tag = tag;
-			this.gameobjects = gameObjects;
-			this.character = character;
+			this.gameObjectsParent = gameObjectsParent;
 		}
 	}
 }

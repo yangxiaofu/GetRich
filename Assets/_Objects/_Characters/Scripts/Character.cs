@@ -1,34 +1,34 @@
-﻿using System;
+﻿    using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Game.Core;
+using Game.Objects.Items;
 
 namespace Game.Objects.Characters{
 	public class Character : MonoBehaviour, ICharacter {
 		[HeaderAttribute("General Character")]
-		[SerializeField] int _dailySalary = 10;
 		[SerializeField] CharacterConfig _config;
+        [SerializeField] float _distanceToWalkTarget = 2f;
         EnergyLevelBehaviour _energy;
 		Clock _clock;
 		CharacterMovement _characterMovement;
 		HomePoint _homePoint;
         Tags _tags;
-
-        public enum CharacterState{
-            Working, Resting, Transition
+        public enum CharacterState{Working, Resting}
+        //Serialization For testing purposes. 
+        ItemParent _itemParent;
+        ItemBehaviour _walkTarget;
+        public void SetTarget(ItemBehaviour target){
+            _walkTarget = target;
         }
-        private CharacterState _state;
-        
-        bool _isWorking = true;
-        public bool isWorking{
-            get{return _isWorking;}
-            set{_isWorking = value;}
+        [SerializeField] CharacterState _state;
+        public void SetCharacterState(CharacterState state)
+        {
+            _state = state;
         }
 
-        
-        public void SetState(CharacterState state) {_state = state;}
         void Awake()
         {
             _energy = gameObject.AddComponent<EnergyLevelBehaviour>();
@@ -36,29 +36,38 @@ namespace Game.Objects.Characters{
         }
 		void Start()
         {
-            _state = CharacterState.Transition;
             RegisterToNotifiers();
             SetupVariables();
         }
+        void Update()
+        {
+            UpdateCharacterState();
+            _energy.AdjustEnergyLevel(_walkTarget, _distanceToWalkTarget, _state);
+        }
 
-        void Update(){
-
-            if (_state == CharacterState.Transition){
-                //Walk to the destination. 
-                if (_isWorking){
-                    _characterMovement.MoveToItemWithTag(_tags.DESK);
-                } else {
-                    _characterMovement.MoveToItemWithTag(_tags.RESTORE_ITEM);
-                }
-            } else if (_state == CharacterState.Resting){
-                //Increase the energy level. 
-                _energy.IncreaseEnergy();
-
-            } else if (_state == CharacterState.Working){
-                //Decrease Energy Level. 
-                _energy.DecreaseEnergy();
-                //Set State to Is Working.
+        private void UpdateCharacterState()
+        {
+            var energy = _energy.energy;
+            if (energy.level == 100 && _state != Character.CharacterState.Working)
+            {
+                ResetTheWalkTargetObject();
+                _characterMovement.WalkToTargetObjectWithTag(_walkTarget, _tags.DESK, _state);
             }
+            else if (energy.level < energy.energyLevelToRest && _state != Character.CharacterState.Resting)
+            {
+                ResetTheWalkTargetObject();
+                _characterMovement.WalkToTargetObjectWithTag(_walkTarget, _tags.RESTORE_ITEM, _state);
+            }
+        }
+
+        private void ResetTheWalkTargetObject()
+        {
+            if (_walkTarget)
+            {
+                _walkTarget.isOccupied = false;
+            }
+
+            _walkTarget = null;
         }
 
         private void SetupVariables()
@@ -69,6 +78,9 @@ namespace Game.Objects.Characters{
             _homePoint = GameObject.FindObjectOfType<HomePoint>();
             Assert.IsNotNull(_homePoint);
 
+            _itemParent = GameObject.FindObjectOfType<ItemParent>();
+            Assert.IsNotNull(_itemParent);
+
             _tags = FindObjectOfType<Tags>();
             Assert.IsNotNull(_tags);
         }
@@ -77,15 +89,7 @@ namespace Game.Objects.Characters{
         {
             _clock = GameObject.FindObjectOfType<Clock>();
             _clock.OnEndOfDay += OnEndOfDay;
-            _clock.OnStartOfDay += OnStartOfDay;
         }
-
-        private void OnStartOfDay()
-        {
-            _state = CharacterState.Transition;
-			_characterMovement.MoveToItemWithTag(_tags.DESK);
-        }
-
         private void OnEndOfDay()
         {
             _state = CharacterState.Resting;
@@ -100,12 +104,6 @@ namespace Game.Objects.Characters{
 		{
 			return _config.GetCostPerHour();
 		}
-
-		public float GetOpportunitiesClosedPerHour()
-		{
-			return _config.GetProductSalesPerHour();
-		}
-
 		public float GetOrderEnterMaxPerHour()
 		{
 			return _config.GetOrdersEnteredPerHour();
@@ -117,9 +115,9 @@ namespace Game.Objects.Characters{
             return _config.GetProductDemandCreatedPerHour();
         }
 
-        public bool GetIsWorking()
-        {
-            return _state == CharacterState.Working;
+        void OnDrawGizmos(){
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(this.transform.position, _distanceToWalkTarget);
         }
     }
 

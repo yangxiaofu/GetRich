@@ -32,36 +32,13 @@ namespace Game.Objects.Items{
 
 		//Used for designed. Remove serialization when testing complete. 
 		[SerializeField] private bool _isOccupied = false;
-		public bool isOccupied{get{return _isOccupied;}}
-		public void SetIsOccuppied(bool occupied)
-		{
-			_isOccupied = occupied;
+		public bool isOccupied{
+			get{return _isOccupied;}
+			set{_isOccupied = value;}
 		}
 
 		public void SetCharacter(Character character){
 			_character = character;
-		}
-
-		void OnTriggerEnter(Collider other)
-		{
-			
-			if (other.gameObject.GetComponent<Character>() == _character)
-			{
-				if (this.gameObject.CompareTag(_tags.DESK)){
-					other.gameObject.GetComponent<Character>().SetState(Character.CharacterState.Working);
-				} else if (this.gameObject.CompareTag(_tags.RESTORE_ITEM)){
-					other.gameObject.GetComponent<Character>().SetState(Character.CharacterState.Resting);
-				}
-				
-			}
-		}
-
-		void OnTriggerExit(Collider other)
-		{
-			if (other.gameObject.GetComponent<Character>() == _character)
-			{
-				_isOccupied = false;
-			}
 		}
 
 		void OnDrawGizmos()

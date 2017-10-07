@@ -81,7 +81,6 @@ namespace Game.Core{
                 var itemBehaviour = this.gameObject.GetComponent<ItemBehaviour>();
                 itemBehaviour.SetupConfig(_objectConfig as ItemConfig);
             } else if (this.gameObject.CompareTag(CHARACTER)){
-                this.gameObject.GetComponent<CharacterMovement>().MoveToItemWithTag(_tags.DESK);
                 this.gameObject.GetComponent<Character>().Setup(_objectConfig as CharacterConfig);
             }
         }

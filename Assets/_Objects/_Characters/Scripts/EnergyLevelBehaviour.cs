@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Objects.Items;
 
 namespace Game.Objects.Characters{
 	public class EnergyLevelBehaviour : MonoBehaviour {
 		[SerializeField] EnergyLevel _energy;
+		public EnergyLevel energy{get{return _energy;}}
 		CharacterConfig _config;
 		Character _character;
 		public float GetEnergyAsPercentage() {return _energy.GetEnergyAsPercentage();}
@@ -17,37 +19,30 @@ namespace Game.Objects.Characters{
 		{
 			_character = GetComponent<Character>();
 		}
-
-		/// <summary>
-		/// Update is called every frame, if the MonoBehaviour is enabled.
-		/// </summary>
-		void Update()
-		{
-			if (_energy.level <= _energy.energyLevelToRest)
-			{
-				_character.isWorking = false;
-				_character.SetState(Character.CharacterState.Transition);
-			} else if (_energy.level == 100){
-				Debug.Log("Energy at full capacity");
-				_character.isWorking = true;
-				_character.SetState(Character.CharacterState.Transition);
-			}	
-		}
-
 		public void Setup(CharacterConfig config)
 		{
 			_config = config;
 			SetupEnergyLevel();
 		}
 
-		public void IncreaseEnergy()
+		public void AdjustEnergyLevel(ItemBehaviour targetItem, float distanceToWalkTarget, Character.CharacterState characterState)
 		{
-			_energy.IncreaseEnergy();
-		}
+			if (targetItem)
+            { 
+                var distanceFromTarget = Vector3.Distance(this.transform.position, targetItem.transform.position);
 
-		public void DecreaseEnergy()
-		{
-			_energy.DecreaseEnergy();
+                if (distanceFromTarget < distanceToWalkTarget)
+                {
+                    if (characterState == Character.CharacterState.Working)
+                    {
+                        _energy.DecreaseEnergy();
+                    }
+                    else if (characterState == Character.CharacterState.Resting)
+                    {
+                        _energy.IncreaseEnergy();
+                    }
+                }
+            }
 		}
 
 		private void SetupEnergyLevel()
